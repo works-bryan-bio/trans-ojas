@@ -1,0 +1,336 @@
+/*---------------REGISTER CONTENT CSS*/
+
+.register-content-section .register-content-section-inner{
+	padding: 84px 0;
+}
+
+.register-content-section .register-content-section-inner .register-title h2{
+	font-family: 'dosis';
+	font-size: 39px;
+	font-weight: 700;
+	color: #555555;
+	margin: 0;
+	margin-bottom: 6px;
+}
+
+.register-content-section .register-content-section-inner .register-title p{
+	font-size: 20px;
+	font-family:'open sans';
+	color: #000;
+}
+
+.register-content-section .register-content-section-inner .linkedin-register button{
+	background: #0085af;
+	color: #fff;
+	border: 0;
+	font-family: 'open sans';
+	padding: 6px 20px;
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.register-content-section .register-content-section-inner .linkedin-register button span{
+	font-size: 20px;
+}
+
+.register-content-section .register-content-section-inner .member-register-form{
+	margin-top: 40px;
+}
+
+.register-content-section .register-content-section-inner .member-register-form .member-register-input{
+	margin-bottom: 25px;
+}
+
+.register-content-section .register-content-section-inner .member-register-form .member-register-input input::placeholder{
+	color: #6ebdc7;
+}
+
+.register-content-section .register-content-section-inner .member-register-form .member-register-input input{
+	height: 38px;
+    padding: 0 20px;
+    font-size: 20px;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #b0b0b1;
+    color: #000;
+    font-family: 'open sans';
+    outline: none;
+}
+
+.register-content-section .register-content-section-inner .member-submit{
+	margin-top: 70px;
+}
+
+.register-content-section .register-content-section-inner .member-submit input, .register-content-section .register-content-section-inner .member-submit login-btn{
+	    background: #0085af;
+    color: #fff;
+    border: 0;
+    font-family: 'open sans';
+    padding: 7px 66px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.register-content-section .register-content-section-inner .register-foot-note{
+	margin-top: 25px;
+}
+
+.register-content-section .register-content-section-inner .register-foot-note p{
+	font-family: 'open sans';
+	font-size: 16px;
+	margin-top: 25px;
+	color: #000;
+}
+
+
+/*LISTING CSS*/
+.job-listing-section {
+    background-color: #eef7f8;
+}
+
+.listing-caption {
+    background: #fff;
+    padding: 30px 82px;
+}
+
+.listing-caption h2{
+    font-size: 38px;
+    font-family: 'dosis';
+    font-weight: 700;
+    margin: 0;
+    padding-bottom: 56px;
+}
+
+.listing-caption p{
+	font-size: 20px;
+	font-family:'open sans';
+	color: #000;
+	margin: 0;
+}
+
+.job-listing-table{
+	padding: 128px; 0;
+    padding-bottom: 100px;
+}
+
+.job-search-title h2{
+	font-size: 38px;
+	font-family: 'dosis';
+	font-weight: 700;
+	margin: 0;
+	padding-bottom: 10px;
+}
+
+.job-table{
+    background: #eef7f8;
+}
+
+.check-our-blogs{
+    padding: 120px 0;
+    padding-bottom: 40px; 
+}
+
+.check-blogs-title h4{
+	font-size: 22px;
+    font-family: 'dosis';
+    font-weight: 700;
+    margin: 0;
+    padding-bottom: 16px;
+}
+
+.listing-menu{
+    text-align: right;
+}
+
+.listing-menu ul{
+    margin: 0;
+    padding: 0;
+}
+
+.listing-menu ul li{
+    display: inline-block;
+    padding: 9px 0;
+    width: 100%;
+}
+
+.listing-menu ul li a{
+    font-family: 'open sans';
+    font-size: 32px;
+    color: #5da5af;
+    text-decoration: none;
+    padding: 22px 10px;
+}
+
+.listing-menu ul li:hover{
+    background: #dfeef0;
+}
+
+.listing-menu ul li:hover a{
+    font-weight: 600;
+}
+
+.job-search-bar{
+    text-align: right;
+}
+
+.job-search-bar input{
+    border: 2px solid #9d9f9f;
+    height: 40px;
+    width: 70%;
+    border-radius: 6px;
+    font-size: 20px;
+    color: #5da5af;
+    padding: 12px;
+}
+
+.job-table-inner th{
+    font-family: 'open sans';
+    font-size: 25px;
+    color: #5da5af;
+    text-align: center;
+    padding-bottom: 28px;
+    border-bottom: 2px solid #6ebdc7;
+}
+
+.job-table-inner td{
+    font-family: 'open sans';
+    font-size: 18px;
+    color: #929397;
+    text-align: center;
+    padding: 9px 0;
+}
+
+.job-table-inner tr:hover td{
+    color: #5da5af;
+}
+
+.blog-links ul{
+    padding: 0;
+    margin: 0;
+    margin-left: 20px;
+}
+
+.blog-links ul li{
+    display: block;
+}
+
+.blog-links ul li a{
+    font-family: 'open sans';
+    font-size: 16px;
+    color: #5da5af;
+    text-align: center;
+    font-weight: 600;
+}
+.position-desired{
+    list-style: none;
+}
+.position-desired li{
+    display: inline-block;
+    margin: 5px 23px;
+    max-width: 230px;
+}
+.content-section .content-section-inner{
+    padding-bottom:10px;
+    padding: 40px 0;
+}
+
+.content-section .content-section-inner .register-title h2{
+    font-family: 'dosis';
+    font-size: 39px;
+    font-weight: 700;
+    color: #555555;
+    margin: 0;
+    margin-bottom: 6px;
+}
+
+.content-section .content-section-inner .register-title p{
+    font-size: 20px;
+    font-family:'open sans';
+    color: #000;
+}
+
+.content-section .content-section-inner .linkedin-register button{
+    background: #0085af;
+    color: #fff;
+    border: 0;
+    font-family: 'open sans';
+    padding: 6px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.content-section .content-section-inner .linkedin-register button span{
+    font-size: 20px;
+}
+
+.content-section .content-section-inner .member-register-form{
+    margin-top: 40px;
+}
+
+.content-section .content-section-inner .member-register-form .member-register-input{
+    margin-bottom: 25px;
+}
+
+.content-section .content-section-inner .member-register-form .member-register-input input::placeholder, .content-section .content-section-inner .member-register-form .member-register-input textarea::placeholder{
+    color: #6ebdc7;
+}
+
+.content-section .content-section-inner .member-register-form .member-register-input input{
+    height: 38px;
+    padding: 0 20px;
+    font-size: 20px;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #b0b0b1;
+    color: #000;
+    font-family: 'open sans';
+    outline: none;
+}
+.content-section .content-section-inner .member-register-form .member-register-input textarea{
+    height: 120px;
+    padding: 0 20px;
+    font-size: 20px;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #b0b0b1;
+    color: #000;
+    font-family: 'open sans';
+    outline: none;
+}
+
+.content-section .content-section-inner .member-submit{
+    margin-top: 70px;
+}
+
+.content-section .content-section-inner .member-submit input{
+        background: #0085af;
+    color: #fff;
+    border: 0;
+    font-family: 'open sans';
+    padding: 7px 66px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.content-section .content-section-inner .register-foot-note{
+    margin-top: 25px;
+}
+
+.content-section .content-section-inner .register-foot-note p{
+    font-family: 'open sans';
+    font-size: 16px;
+    margin-top: 25px;
+    color: #000;
+}
+.jobpost-text-area textarea{
+    width: 625px;
+    border: 2px solid #dfe0e0;
+    height: 194px;
+    font-family: 'open sans';
+    font-size: 14px;
+    padding: 8px;
+}

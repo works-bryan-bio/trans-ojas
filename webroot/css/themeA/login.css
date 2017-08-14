@@ -1,0 +1,95 @@
+/*---------------LOGIN CONTENT CSS*/
+
+.login-content-section .login-content-section-inner{
+	padding: 84px 0;
+}
+
+.login-content-section .login-content-section-inner .login-title h2{
+	font-family: 'dosis';
+	font-size: 39px;
+	font-weight: 700;
+	color: #555555;
+	margin: 0;
+	margin-bottom: 6px;
+}
+
+.login-content-section .login-content-section-inner .login-title p{
+	font-size: 20px;
+	font-family:'open sans';
+	color: #000;
+}
+
+.login-content-section .login-content-section-inner .linkedin-login button{
+	background: #0085af;
+	color: #fff;
+	border: 0;
+	font-family: 'open sans';
+	padding: 6px 20px;
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.login-content-section .login-content-section-inner .linkedin-login button span{
+	font-size: 20px;
+}
+
+.login-content-section .login-content-section-inner .member-login-form{
+	margin-top: 40px;
+}
+
+.login-content-section .login-content-section-inner .member-login-form .member-login-input{
+	margin-bottom: 25px;
+}
+
+.login-content-section .login-content-section-inner .member-login-form .member-login-input input::placeholder{
+	color: #6ebdc7;
+}
+
+.login-content-section .login-content-section-inner .member-login-form .member-login-input input{
+	height: 38px;
+    padding: 0 20px;
+    font-size: 20px;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #b0b0b1;
+    color: #000;
+    font-family: 'open sans';
+    outline: none;
+}
+
+.login-content-section .login-content-section-inner .member-login-form .login-functions ul{
+	padding: 0;
+}
+
+.login-content-section .login-content-section-inner .member-login-form .login-functions ul li{
+	display: inline-block;
+}
+
+.login-content-section .login-content-section-inner .member-login-form .login-functions ul li a{
+	padding: 0 16px;
+	border-right: 1px solid #abacac;
+	font-family: 'open sans';
+	font-size: 16px;
+    font-weight: 600;
+}
+
+.login-content-section .login-content-section-inner .member-login-form .login-functions ul li:last-child a{
+	border-right: 0;
+}
+
+.login-content-section .login-content-section-inner .member-submit{
+	margin-top: 70px;
+}
+
+.login-content-section .login-content-section-inner .member-submit input{
+	    background: #0085af;
+    color: #fff;
+    border: 0;
+    font-family: 'open sans';
+    padding: 7px 66px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+

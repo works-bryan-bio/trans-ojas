@@ -1,0 +1,22 @@
+/*---------------EMPLOYER CONTENT CSS*/
+
+.employer-content-section .employer-content-section-inner{
+	padding: 84px 0;
+}
+
+.employer-content-section .employer-content-section-inner .employer-title h2, .content-section-inner .employer-title h2{
+	font-family: 'dosis';
+	font-size: 39px;
+	font-weight: 700;
+	color: #555555;
+	margin: 0;
+	margin-bottom: 6px;
+}
+
+.employer-content-section .employer-content-section-inner .employer-title p, .content-section-inner .employer-title p{
+	font-size: 20px;
+	font-family:'open sans';
+	color: #000;
+	margin: 40px 0;
+}
+

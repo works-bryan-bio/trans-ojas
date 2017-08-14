@@ -1,0 +1,830 @@
+/*GENERAL*/
+
+body p{
+	color: #929397;
+}
+
+.wrapper{
+	max-width: 835px;
+	margin: 0 auto;
+}
+
+.papercrack-top{
+	margin-top: -53px;
+}
+
+.paper-crack-bottom{
+	margin-bottom: -45px;
+}
+
+.papercrack-top > img, .paper-crack-bottom > img{
+	width: 100%;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Cedarville+Cursive');
+
+
+/*------------------ HEADER-----------------------------------------*/
+.transparency-header{
+	background-color: #eef7f8;
+}
+
+.transparency-header .transparency-header-inner{
+	padding: 50px 0;
+}
+
+.transparency-header .transparency-header-inner .transparency-tel-number{
+    text-align: right;
+    padding-top: 18px;
+}
+
+.transparency-header .transparency-header-inner .transparency-tel-number h2{
+	font-family: 'dosis';
+	font-size: 39px;
+	font-weight: 700;
+	color: #555555;
+}
+
+.transparency-header .transparency-header-inner .transparency-tel-number h2 > span{
+	font-weight: 400;
+}
+
+/*Menu*/
+.transparency-header .transparency-header-inner .transparency-menu{
+	text-align: center;
+}
+
+.transparency-header .transparency-header-inner .transparency-menu ul.menu-list{
+	padding: 0;
+	margin: 0;
+}
+
+.transparency-header .transparency-header-inner .transparency-menu ul.menu-list li{
+	display: inline-block;
+}
+
+.transparency-header .transparency-header-inner .transparency-menu ul.menu-list li a{
+	font-size: 17px;
+	color: #1475C2;
+	font-family: 'open sans';
+	font-weight: 600;
+	border-right: 1px solid #000;
+	padding: 0 10px;
+	text-decoration: none;
+}
+.last-menu-item a{
+	border-right: none !important;
+}
+.transparency-header .transparency-header-inner .transparency-menu ul.menu-list li a:hover{
+	color: #fb7368;
+}
+
+.logo > img{
+	width: 190px;
+}
+
+
+
+/*------------------ CONTENT-----------------------------------------*/
+.home-content-section{
+
+}
+
+.home-content-section .home-content-section-inner{
+	padding: 40px 0;
+}
+
+.home-content-section .home-content-section-inner .illustration-image img{
+	max-width: 100%;
+}
+
+/*nice things*/
+.transparent-nice-things{
+	background-color: #eef7f8;
+}
+
+.transparent-nice-things .transparent-nice-things-inner{
+	padding: 60px 0;
+}
+
+.transparent-nice-things .transparent-nice-things-inner .nice-things-title{
+	text-align: center;
+}
+
+.transparent-nice-things .transparent-nice-things-inner .nice-things-title > h2{
+	margin: 0;
+    padding-bottom: 30px;
+    font-size: 48px;
+    font-family: dosis;
+    font-weight: 700;
+    color: #575859;
+}
+
+.why-us-button {
+    margin-bottom: 35px;
+}
+
+.why-us-button > a{
+	margin: 0;
+    padding-bottom: 30px;
+    font-size: 48px;
+    font-family: dosis;
+    font-weight: 700;
+    color: #575859;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.why-us-button > a:hover{
+    color: #ccc;
+    cursor: pointer;
+}
+
+.home-titles{
+	text-align: right;
+}
+
+.home-titles > a{
+	margin: 0;
+    padding-bottom: 30px;
+    font-size: 48px;
+    font-family: dosis;
+    font-weight: 700;
+    color: #575859;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.home-titles > a > span{
+    font-size: 20px;
+
+}
+
+.home-titles > a:hover{
+    color: #ccc;
+    cursor: pointer;
+}
+
+.transparency-vector{
+	margin-bottom: 50px;
+}
+
+.transparent-nice-things .transparent-nice-things-inner .transparent-testimonial > p{
+	font-size: 18px;
+	line-height: 26px;
+	font-weight: 400;
+	font-family: 'open sans';
+}
+
+.transparent-nice-things .transparent-nice-things-inner .transparent-testimonial > h4{
+	font-family: 'open sans';
+	font-size: 22px;
+	font-weight: 900;
+	color: #6b6b6c;
+	margin: 0;
+	margin-top: 18px;
+}
+
+.transparent-nice-things .transparent-nice-things-inner .transparent-testimonial > h5{
+	font-family: 'open sans';
+	font-size: 22px;
+	color: #6b6b6c;
+	margin: 0;
+}
+
+.transparent-testimonial {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/*transparency blog*/
+.transparency-blog {
+
+}
+
+.transparency-blog .transparency-blog-inner{
+	
+}
+
+.transparency-blog .transparency-blog-inner .blog-section{
+    text-align: center;
+    padding: 70px 0;
+}
+
+.transparency-blog .transparency-blog-inner .blog-section > h2{
+	margin: 0;
+    padding-bottom: 10px;
+    font-size: 48px;
+    font-family: dosis;
+    font-weight: 700;
+    color: #575859;
+}
+
+.transparency-blog .transparency-blog-inner .blog-section > h4{
+	font-size: 29px;
+	font-family: 'open sans';
+	font-weight: 600;
+	margin: 0;
+	color: #929397;
+	padding-bottom: 10px;
+}
+
+.transparency-blog .transparency-blog-inner .blog-section > p{
+    padding: 0 135px;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    font-family: 'open sans';
+}
+
+/*recent roles*/
+.recent-roles-section{
+	padding: 60px 0;
+	text-align: center;
+}
+
+.recent-roles-section h2{
+	margin: 0;
+	padding-bottom: 25px;
+	font-size: 48px;
+	font-family: dosis;
+	font-weight: 700;
+	color: #575859;
+}
+
+.recent-roles-section .roles-links{
+	margin-bottom: 26px;
+}
+
+/*Home Form Section*/
+.home-form-section{
+	padding-bottom: 130px;
+}
+
+.home-form-section .home-form-section-inner{
+    max-width: 475px;
+    height: 446px;
+    margin: 0 auto;
+    background-image: url(images/home-form-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+    margin-top: 70px;
+}
+
+.home-form-section .home-form-section-inner .home-form-title h2{
+	margin: 0;
+	padding-bottom: 15px;
+	font-size: 48px;
+	font-family: dosis;
+	font-weight: 700;
+	color: #575859;
+	text-align: center;
+}
+
+.home-form-section .home-form-section-inner .home-form-title p{
+	text-align: center;
+	font-family: 'open sans';
+}
+
+.home-form-section .home-form-section-inner .form-search{
+	padding: 38px 0;
+}
+
+.home-form-section .home-form-section-inner .form-search .form-input input{
+	width: 100%;
+    font-size: 34px;
+    font-family: 'open sans';
+    border: none;
+    padding: 0px 14px;
+    border-bottom: 2px solid #a1a1a5;
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------ FOOTER-----------------------------------------*/
+.transparency-footer{
+	background-color: #eef7f8;
+}
+
+.transparency-footer .transparency-footer-inner{
+	padding: 36px 0;
+    padding-top: 65px;
+}
+
+.transparency-footer .transparency-footer-inner .social-media-section{
+	float: right;
+}
+
+.transparency-footer .transparency-footer-inner .footer-contacts .footer-contacts-title h2{
+	font-size: 40px;
+	font-family: 'dosis';
+	font-weight: 700;
+	margin: 0;
+}
+
+.transparency-footer .transparency-footer-inner .footer-contacts .contact-information{
+	padding: 24px 0;
+}
+
+.transparency-footer .transparency-footer-inner .footer-contacts .contact-information ul{
+	padding: 0;
+	margin: 0;
+}
+
+.transparency-footer .transparency-footer-inner .footer-contacts .contact-information ul li{
+	display: block;
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 14px;
+	float: left;
+}
+
+.transparency-footer .transparency-footer-inner .footer-contacts .contact-information ul li i{
+    padding-right: 24px;
+    padding-bottom: 20px;
+}
+
+.transparency-footer .transparency-footer-inner .social-media-section .social-media-icons{
+	padding: 20px 0;
+	text-align: center;
+}
+
+.transparency-footer .transparency-footer-inner .social-media-section .social-media-icons ul{
+	margin: 0;
+	padding: 0;
+}
+
+.transparency-footer .transparency-footer-inner .social-media-section .social-media-icons ul li{
+	display: inline-block;
+}
+
+.transparency-footer .transparency-footer-inner .social-media-section .social-media-icons ul li a{
+    color: #626060 !important;
+    font-size: 48px;
+    padding-right: 24px;
+}
+
+.transparency-footer .transparency-footer-inner .copyright-section{
+	text-align: center;
+}
+
+.transparency-footer .transparency-footer-inner .copyright-section p{
+    font-size: 14px;
+    color: #555555;
+    text-transform: lowercase;
+    font-weight: 500;
+    margin: 0;
+}
+
+.member-register-input-check{
+	margin-top: 30px;
+}
+
+.member-register-roles select{
+	height: 38px;
+    padding: 0 20px;
+    font-size: 20px;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #b0b0b1;
+    color: #000;
+    font-family: 'open sans';
+    outline: none;
+}
+
+
+.fa{
+	float: left;
+}
+
+
+.employer-cursive {
+    font-family: 'Cedarville Cursive', cursive;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.job-search-title h4{
+	font-size: 20px;
+	font-family: 'open sans';
+	color: #000;
+	margin: 0;
+}
+
+/*BROKER-----------------------------------------------------------------------------*/
+/*Specific Job Page*/
+.broker-title h2{
+	font-size: 38px;
+	font-family: 'dosis';
+	font-weight: 700;
+	margin: 0;
+	padding-bottom: 56px;
+}
+
+.broker-form{
+	background: #eef7f8;
+}
+
+.broker-input{
+	margin-bottom: 10px;
+}
+
+.broker-input input{
+	height: 38px;
+    padding: 0 20px;
+    font-size: 20px;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #b0b0b1;
+    color: #000;
+    font-family: 'open sans';
+    outline: none;
+}
+
+.broker-input textarea{
+	width: 100%;
+	height: 194px;
+	font-family: 'open sans';
+	font-size: 14px;
+	padding: 8px;
+	border-radius: 12px;
+    border: 1px solid #b0b0b1;
+    outline: none;
+}
+
+.broker-upload{
+	margin-bottom: 25px;
+}
+
+.broker-upload h4{
+    font-family: 'open sans';
+    font-size: 20px;
+    color: #6ebdc7;
+}
+
+.broker-submit{
+	margin-top: 20px;
+}
+
+.broker-submit input{
+	background: #0085af;
+	color: #fff;
+	border: 0;
+	font-family: 'open sans';
+	padding: 7px 66px;
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: 600;
+	width: 100%;
+}
+
+/*-------------------------------------------------------
+JOB SEARCH PAGE--------------------------------------------------------
+-------------------------------------------------------*/
+.search-jobs input, .search-job-location select{
+	height: 38px;
+	padding: 0 20px;
+	font-size: 20px;
+	width: 100%;
+	border-radius: 12px;
+	border: 1px solid #b0b0b1;
+	color: #000;
+	font-family: 'open sans';
+	outline: none;
+	margin-bottom: 10px;
+}
+
+.job-search-title h2{
+	font-size: 38px;
+	font-family: 'dosis';
+	font-weight: 700;
+	margin: 0;
+}
+
+.search-form{
+	margin: 30px 0;
+}
+
+.button-search button{
+	    background: #0085af;
+	color: #fff;
+	border: 0;
+	font-family: 'open sans';
+	padding: 7px 20px;
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: 600;
+	width: 100%;
+}
+
+.search-container{
+	background: #eef7f8;
+	padding: 20px 30px;
+	border-radius: 4px;
+}
+
+.job-search-caption h4{
+	font-family: dosis;
+	font-size: 20px;
+	margin: 0;
+	margin-bottom: 20px;
+}
+
+.job-search-components {
+    background: #fff;
+    padding: 15px 15px;
+    border-radius: 5px;
+}
+
+
+.job-search-components table th{
+	font-size: 12px;
+}
+
+.job-search-components table td{
+	font-size: 11px;
+}
+
+.search-component-read-more button, .search-component-read-more .job-read-more{
+    background: #0085af;
+    color: #fff;
+    border: 0;
+    font-family: 'open sans';
+    padding: 7px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.job-read-more{
+	padding:9px 60px !important;
+}
+
+.search-result{
+	border-bottom: 1px solid #ccc;
+	padding: 20px 0;
+}
+
+.skip-submit {
+    margin-bottom: 26px;
+}
+
+.skip-submit button{
+	background: #0085af;
+	color: #fff;
+	border: 0;
+	font-family: 'open sans';
+	padding: 14px 20px;
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: 600;
+	width: 100%;
+}
+
+/*JOB DETAILS-----------------------------------------------*/
+.detail-title h2{
+	font-size: 38px;
+	font-family: 'dosis';
+	font-weight: 700;
+	margin: 0;
+	padding-bottom: 56px;
+}
+
+.detail-form{
+	background: #eef7f8;
+}
+
+.detail-input{
+	margin-bottom: 10px;
+}
+
+.detail-input input{
+	height: 38px;
+    padding: 0 20px;
+    font-size: 20px;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #b0b0b1;
+    color: #000;
+    font-family: 'open sans';
+    outline: none;
+}
+
+.detail-input textarea{
+	width: 100%;
+	height: 194px;
+	font-family: 'open sans';
+	font-size: 14px;
+	padding: 8px;
+	border-radius: 12px;
+    border: 1px solid #b0b0b1;
+    outline: none;
+}
+
+.detail-upload{
+	margin-bottom: 25px;
+}
+
+.detail-upload h4{
+    font-family: 'open sans';
+    font-size: 20px;
+    color: #6ebdc7;
+}
+
+.detail-submit{
+	margin-top: 20px;
+}
+
+.detail-submit input{
+	background: #0085af;
+	color: #fff;
+	border: 0;
+	font-family: 'open sans';
+	padding: 7px 66px;
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: 600;
+	width: 100%;
+}
+
+.job-description-detail {
+    background: #eef7f8;
+    padding: 20px 10px;
+    border-radius: 3px;
+     font-family: 'dosis';
+}
+
+.job-description-detail h4{
+    font-family: 'dosis' !important;
+    font-size: 26px;
+    font-weight: 700;
+    color: #555555;
+    margin: 0;
+    margin-bottom: 6px;
+}
+
+.job-description-detail h6{
+	font-family: 'dosis';
+	font-size: 20px;
+	font-weight: 700;
+	color: #555555;
+	margin-top: 20px;
+	margin-bottom: 6px;
+}
+
+.job-description-detail p{
+    font-size: 14px;
+    font-family: 'open sans';
+    color: #000;
+}
+
+.detail-apply-now button{
+    background: #0085af;
+    color: #fff;
+    border: 0;
+    font-family: 'open sans';
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    padding: 16px 0;
+}
+
+.detail-share-job{
+    margin-top: 30px;
+    background: #eef7f8;
+}
+
+.detail-share-job .share-title, .detail-share-job .share-icons{
+	padding: 12px 15px;
+	border-bottom: 1px solid #ccc;
+}
+
+.detail-share-job .share-title h4{
+    font-family: 'dosis';
+    font-size: 20px;
+    font-weight: 700;
+    color: #555555;
+    margin: 0px;
+}
+
+.detail-share-job .share-icons ul{
+	padding: 0;
+	margin: 0;
+	margin-top: 9px;
+	text-align: center;
+}
+
+.detail-share-job .share-icons ul li{
+	display: inline-block;
+}
+
+.detail-share-job .share-icons ul li a{
+	padding: 2px 5px;
+	font-size: 20px;
+}
+
+
+/*------------------ MEDIA/ RESPONSIVE-----------------------------------------*/
+@media screen and (max-width: 1200px) {
+	.wrapper {
+	    padding: 10px 30px;
+	}
+
+	.transparency-header .transparency-header-inner .transparency-tel-number {
+	    text-align: center;
+	    padding-top: 8px;
+	}
+
+	.transparency-header .transparency-header-inner .transparency-tel-number h2{
+		font-size: 28px;
+	}
+
+	.papercrack-top{
+		display: none;
+	}
+
+	.paper-crack-bottom{
+		display: none;
+	}
+
+	.transparency-footer .transparency-footer-inner .social-media-section {
+	    float: left;
+	}
+
+	.logo{
+		text-align: center;
+	}
+
+	.listing-caption{
+		padding: 0 !important;
+	}
+
+	.job-listing-section{
+		padding: 0 !important;
+	}
+
+	.job-listing-table{
+		padding: 0 !important;
+	}
+
+	.job-search-title,.job-search-bar{
+		text-align: center !important;
+	}
+
+	.job-table-inner th{
+		font-size: 16px !important;
+	}
+}
+.login-on{
+	color: #fff !important;background-color: #1475C2;
+}
+.login-off{
+	color: #818284 !important;background-color: none;
+}
+#login-input input {  
+  padding: 6px 5px;
+  margin: 0 0 5px 0;
+  width: 238px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px #ccc inset;
+}
+.hide{
+	display:none;
+}
+.show{
+	display:block;
+}
+#login-input input:focus {
+  background-color: #fff;
+  border-color: #e8c291;
+  outline: none;
+  box-shadow: 0 0 0 1px #e8c291 inset;
+}

@@ -1,0 +1,99 @@
+/*---------------about CONTENT CSS*/
+@font-face{
+    font-family: 'WCMagno';
+    src: url('fonts/WCManoNegraBta.otf') format('opentype');
+}
+
+.about-content-section .about-content-section-inner{
+    /*padding: 84px 0;*/
+}
+
+.about-content-section .about-content-section-inner .about-title h2{
+    font-family: 'dosis';
+    font-size: 39px;
+    font-weight: 700;
+    color: #555555;
+    margin: 0;
+    margin-bottom: 6px;
+}
+
+.about-content-section .about-content-section-inner .about-title p{
+    font-size: 20px;
+    font-family:'open sans';
+    color: #000;
+    margin: 40px 0;
+}
+
+.about-content-section .about-content-section-inner .about-title .wcmagno{
+    font-family: 'WCMagno';
+    font-size: 1.5em;
+}
+
+.about-content-section .linden-container{
+    background: #eef7f8;
+}
+
+.about-content-section .linden-container .left-container{
+    margin-top: -100px;
+}
+
+.about-content-section .linden-container .right-container ul li{
+    font-size: 20px;
+    font-family:'open sans';
+    color: #000;
+    height: 86px;
+    list-style: none;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    background: url('images/td-bg.png')no-repeat;
+}
+
+.about-content-section .linden-container .right-container ul li .bullet{
+    background: url('images/bullet.png')no-repeat;
+    height: 21px;
+    width: 21px;
+}
+
+
+.bordertop{
+    margin-top: -69px;
+}
+
+.borderbottom{
+    margin-bottom: -58px;
+}
+
+.bordertop img, .borderbottom img{
+    width: 100%;
+}
+
+.lindentop img{
+    width: 100%;
+}
+
+.lindenbottom img{
+    width: 100%;
+}
+.left{
+    float:left;
+}
+p.skill-text{
+    font-size: 18px;
+    font-family: 'open sans';
+    color: #000;
+    font-weight: 400;
+}
+p.why-text{
+    font-size: 22px;
+    font-family: 'open sans';
+    color: #3c3c3c;
+    font-weight: 600;
+}
+.bullet-ink{
+    padding: 0px;width: 4%;
+}
+.why-theme{
+    font-size: 34px;
+    margin-top: 55px;
+    line-height: 35px !important;
+}

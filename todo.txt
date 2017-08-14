@@ -1,0 +1,11 @@
+Blog post - Send time to complete 
+- Picture blog title 
+- excerpt content / Read more on the bottom
+- 3 across the page 
+- date format 11 November 2016 - time is not required 
+- pagination on the bottom for scrolling previous blogs 
+Email - subscribe - Blog categories ref http://prntscr.com/dgccmr
+- Leave a comment and permalink 
+for reference - for blog content http://transparencyitblog.com/
+for reference - http://www.castleford.com.au/blog - format for blog
+for reference - http://www.smartpassiveincome.com/blog/2/

@@ -1,0 +1,146 @@
+/*---------------jobpost CONTENT CSS*/
+
+.jobpost-content-section .jobpost-content-section-inner{
+	padding: 84px 0;
+}
+
+.jobpost-content-section .jobpost-content-section-inner .jobpost-title h2{
+	font-family: 'dosis';
+	font-size: 39px;
+	font-weight: 700;
+	color: #555555;
+	margin: 0;
+	margin-bottom: 6px;
+}
+
+.jobpost-content-section .jobpost-content-section-inner .jobpost-title p{
+	font-size: 20px;
+	font-family:'open sans';
+	color: #000;
+}
+
+.jobpost-content-section .jobpost-content-section-inner .linkedin-jobpost button{
+	background: #0085af;
+	color: #fff;
+	border: 0;
+	font-family: 'open sans';
+	padding: 6px 20px;
+	border-radius: 5px;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.jobpost-content-section .jobpost-content-section-inner .linkedin-jobpost button span{
+	font-size: 20px;
+}
+
+.jobpost-content-section .jobpost-content-section-inner .member-jobpost-form{
+	margin-top: 40px;
+}
+
+.jobpost-content-section .jobpost-content-section-inner .member-jobpost-form .member-jobpost-input{
+	margin-bottom: 25px;
+}
+
+.jobpost-content-section .jobpost-content-section-inner .member-jobpost-form .member-jobpost-input input::placeholder{
+	color: #6ebdc7;
+}
+
+.jobpost-content-section .jobpost-content-section-inner .member-jobpost-form .member-jobpost-input input{
+	height: 38px;
+    padding: 0 20px;
+    font-size: 20px;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #b0b0b1;
+    color: #000;
+    font-family: 'open sans';
+    outline: none;
+}
+
+.jobpost-content-section .jobpost-content-section-inner .member-jobpost-form .attach-resume{
+
+}
+
+.jobpost-content-section .jobpost-content-section-inner .member-jobpost-form .attach-resume h4{
+	font-family: 'open sans';
+	font-size: 20px;
+	color: #6ebdc7;
+}
+
+.jobpost-content-section .jobpost-content-section-inner .member-jobpost-form .jobpost-text-area{
+	margin-top: 30px;
+}
+
+.jobpost-content-section .jobpost-content-section-inner .member-jobpost-form .jobpost-text-area h4{
+	font-family: 'open sans';
+	font-size: 20px;
+	color: #6ebdc7;
+}
+
+.jobpost-content-section .jobpost-content-section-inner .member-jobpost-form .jobpost-text-area textarea{
+	width: 625px;
+	border: 2px solid #dfe0e0;
+	height: 194px;
+	font-family: 'open sans';
+	font-size: 14px;
+	padding: 8px;
+}
+
+.jobpost-content-section .jobpost-content-section-inner .member-submit{
+	margin-top: 70px;
+}
+
+.jobpost-content-section .jobpost-content-section-inner .member-submit input{
+	    background: #0085af;
+    color: #fff;
+    border: 0;
+    font-family: 'open sans';
+    padding: 7px 66px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.jobpost-content-section .jobpost-content-section-inner .jobpost-foot-note{
+	margin-top: 25px;
+}
+
+
+
+
+
+/*Blog CSS*/
+.blog-body-inner{
+	padding: 40px 0;
+}
+
+.blog-body-inner .blog-title{
+	padding: 20px 0;
+	padding-bottom: 40px;
+	text-align: center;
+}
+
+.blog-body-inner .blog-title h2{
+	font-family: 'dosis';
+	font-size: 39px;
+	font-weight: 700;
+	color: #555555;
+	margin: 0;
+	margin-bottom: 6px;
+}
+
+.blog-body-inner .blog-content .blog-content-inner p{
+	font-size: 20px;
+    font-family: 'open sans';
+    color: #000;
+}
+
+.blog-body-inner .blog-content .blog-content-inner h4{
+	font-family: 'dosis';
+	font-size: 28px;
+	font-weight: 700;
+	color: #555555;
+	margin: 30px 0;
+	margin-bottom: 6px;
+}

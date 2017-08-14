@@ -1,0 +1,138 @@
+.job-listing-section {
+    background-color: #eef7f8;
+}
+
+.listing-caption {
+    background: #fff;
+    padding: 30px 82px;
+}
+
+.listing-caption h2{
+    font-size: 38px;
+    font-family: 'dosis';
+    font-weight: 700;
+    margin: 0;
+    padding-bottom: 56px;
+}
+
+.listing-caption p{
+	font-size: 20px;
+	font-family:'open sans';
+	color: #000;
+	margin: 0;
+}
+
+.job-listing-table{
+	padding: 128px; 0;
+    padding-bottom: 20px;
+}
+
+.job-search-title h2{
+	font-size: 38px;
+	font-family: 'dosis';
+	font-weight: 700;
+	margin: 0;
+	padding-bottom: 10px;
+}
+
+.job-table{
+	background: #fff;
+    padding: 50px 0;
+}
+
+.check-our-blogs{
+    padding: 120px 0;
+    padding-bottom: 40px; 
+}
+
+.check-blogs-title h4{
+	font-size: 22px;
+    font-family: 'dosis';
+    font-weight: 700;
+    margin: 0;
+    padding-bottom: 16px;
+}
+
+.listing-menu{
+    text-align: right;
+}
+
+.listing-menu ul{
+    margin: 0;
+    padding: 0;
+}
+
+.listing-menu ul li{
+    display: inline-block;
+    padding: 9px 0;
+    width: 100%;
+}
+
+.listing-menu ul li a{
+    font-family: 'open sans';
+    font-size: 32px;
+    color: #5da5af;
+    text-decoration: none;
+    padding: 22px 10px;
+}
+
+.listing-menu ul li:hover{
+    background: #dfeef0;
+}
+
+.listing-menu ul li:hover a{
+    font-weight: 600;
+}
+
+.job-search-bar{
+    text-align: right;
+}
+
+.job-search-bar input{
+    border: 2px solid #9d9f9f;
+    height: 40px;
+    width: 70%;
+    border-radius: 6px;
+    font-size: 20px;
+    color: #5da5af;
+    padding: 12px;
+}
+
+.job-table-inner th{
+    font-family: 'open sans';
+    font-size: 25px;
+    color: #5da5af;
+    text-align: center;
+    padding-bottom: 28px;
+    border-bottom: 2px solid #6ebdc7;
+}
+
+.job-table-inner td{
+    font-family: 'open sans';
+    font-size: 18px;
+    color: #929397;
+    text-align: center;
+    padding: 9px 0;
+}
+
+.job-table-inner tr:hover td{
+    color: #5da5af;
+}
+
+.blog-links ul{
+    padding: 0;
+    margin: 0;
+    margin-left: 20px;
+}
+
+.blog-links ul li{
+    display: block;
+}
+
+.blog-links ul li a{
+    font-family: 'open sans';
+    font-size: 16px;
+    color: #5da5af;
+    text-align: center;
+    font-weight: 600;
+}
