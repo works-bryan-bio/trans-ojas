@@ -60,6 +60,17 @@
             <li id="users_nav" title="Users" class="<?= $nav_selected["states"] ?>">
                 <?= $this->Html->link('<i class="fa fa-circle-o"></i><span>' . __("States") . "</span>",["controller" => "states", "action" => "index"],["escape" => false]) ?>
             </li>    
+            
+            <li id="users_nav" title="Users" class="<?= $nav_selected["locations"] ?>">
+                <?= $this->Html->link('<i class="fa fa-circle-o"></i><span>' . __("Locations") . "</span>",["controller" => "locations", "action" => "index"],["escape" => false]) ?>
+            </li>
+            <li id="users_nav" title="Users" class="<?= $nav_selected["areas"] ?>">
+                <?= $this->Html->link('<i class="fa fa-circle-o"></i><span>' . __("Areas") . "</span>",["controller" => "areas", "action" => "index"],["escape" => false]) ?>
+            </li>
+            <li id="users_nav" title="Users" class="<?= $nav_selected["suburbs"] ?>">
+                <?= $this->Html->link('<i class="fa fa-circle-o"></i><span>' . __("Suburbs") . "</span>",["controller" => "suburbs", "action" => "index"],["escape" => false]) ?>
+            </li>
+
             <li id="users_nav" title="Users" class="<?= $nav_selected["opportunity_types"] ?>">
                 <?= $this->Html->link('<i class="fa fa-circle-o"></i><span>' . __("Job Classifications") . "</span>",["controller" => "opportunity_types", "action" => "index"],["escape" => false]) ?>
             </li>            

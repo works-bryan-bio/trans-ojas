@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10.8
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 15, 2017 at 01:45 AM
--- Server version: 5.6.14
--- PHP Version: 5.5.24
+-- Generation Time: Aug 14, 2017 at 11:59 AM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `ojas_live_db`
@@ -27,11 +27,10 @@ SET time_zone = "+00:00";
 --
 
 DROP TABLE IF EXISTS `acl_phinxlog`;
-CREATE TABLE IF NOT EXISTS `acl_phinxlog` (
+CREATE TABLE `acl_phinxlog` (
   `version` bigint(20) NOT NULL,
   `start_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `end_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`version`)
+  `end_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -48,25 +47,22 @@ INSERT INTO `acl_phinxlog` (`version`, `start_time`, `end_time`) VALUES
 --
 
 DROP TABLE IF EXISTS `acos`;
-CREATE TABLE IF NOT EXISTS `acos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `acos` (
+  `id` int(11) NOT NULL,
   `parent_id` int(11) DEFAULT NULL,
   `model` varchar(255) DEFAULT NULL,
   `foreign_key` int(11) DEFAULT NULL,
   `alias` varchar(255) DEFAULT NULL,
   `lft` int(11) DEFAULT NULL,
-  `rght` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `lft` (`lft`,`rght`),
-  KEY `alias` (`alias`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=255 ;
+  `rght` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `acos`
 --
 
 INSERT INTO `acos` (`id`, `parent_id`, `model`, `foreign_key`, `alias`, `lft`, `rght`) VALUES
-(1, NULL, NULL, NULL, 'controllers', 1, 464),
+(1, NULL, NULL, NULL, 'controllers', 1, 534),
 (14, 1, NULL, NULL, 'Users', 2, 27),
 (15, 14, NULL, NULL, 'index', 3, 4),
 (16, 14, NULL, NULL, 'dashboard', 5, 6),
@@ -88,216 +84,274 @@ INSERT INTO `acos` (`id`, `parent_id`, `model`, `foreign_key`, `alias`, `lft`, `
 (32, 26, NULL, NULL, 'Toolbar', 43, 46),
 (33, 32, NULL, NULL, 'clearCache', 44, 45),
 (34, 1, NULL, NULL, 'Migrations', 48, 49),
-(35, 1, NULL, NULL, 'Pages', 50, 73),
+(35, 1, NULL, NULL, 'Pages', 50, 79),
 (36, 35, NULL, NULL, 'index', 51, 52),
 (37, 35, NULL, NULL, 'view', 53, 54),
 (38, 35, NULL, NULL, 'add', 55, 56),
 (39, 35, NULL, NULL, 'edit', 57, 58),
 (40, 35, NULL, NULL, 'delete', 59, 60),
 (41, 35, NULL, NULL, 'isAuthorized', 61, 62),
-(42, 1, NULL, NULL, 'Slides', 74, 89),
-(43, 42, NULL, NULL, 'index', 75, 76),
-(44, 42, NULL, NULL, 'view', 77, 78),
-(45, 42, NULL, NULL, 'add', 79, 80),
-(46, 42, NULL, NULL, 'edit', 81, 82),
-(47, 42, NULL, NULL, 'delete', 83, 84),
-(48, 42, NULL, NULL, 'isAuthorized', 85, 86),
-(51, 1, NULL, NULL, 'UserEntities', 90, 103),
-(52, 51, NULL, NULL, 'index', 91, 92),
-(53, 51, NULL, NULL, 'view', 93, 94),
-(54, 51, NULL, NULL, 'add', 95, 96),
-(55, 51, NULL, NULL, 'edit', 97, 98),
-(56, 51, NULL, NULL, 'delete', 99, 100),
-(57, 51, NULL, NULL, 'isAuthorized', 101, 102),
-(58, 1, NULL, NULL, 'Services', 104, 119),
-(59, 58, NULL, NULL, 'index', 105, 106),
-(60, 58, NULL, NULL, 'view', 107, 108),
-(61, 58, NULL, NULL, 'add', 109, 110),
-(62, 58, NULL, NULL, 'edit', 111, 112),
-(63, 58, NULL, NULL, 'delete', 113, 114),
-(64, 58, NULL, NULL, 'isAuthorized', 115, 116),
-(65, 1, NULL, NULL, 'Testimonials', 120, 133),
-(66, 65, NULL, NULL, 'index', 121, 122),
-(67, 65, NULL, NULL, 'view', 123, 124),
-(68, 65, NULL, NULL, 'add', 125, 126),
-(69, 65, NULL, NULL, 'edit', 127, 128),
-(70, 65, NULL, NULL, 'delete', 129, 130),
-(71, 65, NULL, NULL, 'isAuthorized', 131, 132),
-(72, 1, NULL, NULL, 'Projects', 134, 149),
-(73, 72, NULL, NULL, 'index', 135, 136),
-(74, 72, NULL, NULL, 'view', 137, 138),
-(75, 72, NULL, NULL, 'add', 139, 140),
-(76, 72, NULL, NULL, 'edit', 141, 142),
-(77, 72, NULL, NULL, 'delete', 143, 144),
-(78, 72, NULL, NULL, 'isAuthorized', 145, 146),
-(86, 72, NULL, NULL, 'all', 147, 148),
+(42, 1, NULL, NULL, 'Slides', 80, 95),
+(43, 42, NULL, NULL, 'index', 81, 82),
+(44, 42, NULL, NULL, 'view', 83, 84),
+(45, 42, NULL, NULL, 'add', 85, 86),
+(46, 42, NULL, NULL, 'edit', 87, 88),
+(47, 42, NULL, NULL, 'delete', 89, 90),
+(48, 42, NULL, NULL, 'isAuthorized', 91, 92),
+(51, 1, NULL, NULL, 'UserEntities', 96, 109),
+(52, 51, NULL, NULL, 'index', 97, 98),
+(53, 51, NULL, NULL, 'view', 99, 100),
+(54, 51, NULL, NULL, 'add', 101, 102),
+(55, 51, NULL, NULL, 'edit', 103, 104),
+(56, 51, NULL, NULL, 'delete', 105, 106),
+(57, 51, NULL, NULL, 'isAuthorized', 107, 108),
+(58, 1, NULL, NULL, 'Services', 110, 125),
+(59, 58, NULL, NULL, 'index', 111, 112),
+(60, 58, NULL, NULL, 'view', 113, 114),
+(61, 58, NULL, NULL, 'add', 115, 116),
+(62, 58, NULL, NULL, 'edit', 117, 118),
+(63, 58, NULL, NULL, 'delete', 119, 120),
+(64, 58, NULL, NULL, 'isAuthorized', 121, 122),
+(65, 1, NULL, NULL, 'Testimonials', 126, 139),
+(66, 65, NULL, NULL, 'index', 127, 128),
+(67, 65, NULL, NULL, 'view', 129, 130),
+(68, 65, NULL, NULL, 'add', 131, 132),
+(69, 65, NULL, NULL, 'edit', 133, 134),
+(70, 65, NULL, NULL, 'delete', 135, 136),
+(71, 65, NULL, NULL, 'isAuthorized', 137, 138),
+(72, 1, NULL, NULL, 'Projects', 140, 155),
+(73, 72, NULL, NULL, 'index', 141, 142),
+(74, 72, NULL, NULL, 'view', 143, 144),
+(75, 72, NULL, NULL, 'add', 145, 146),
+(76, 72, NULL, NULL, 'edit', 147, 148),
+(77, 72, NULL, NULL, 'delete', 149, 150),
+(78, 72, NULL, NULL, 'isAuthorized', 151, 152),
+(86, 72, NULL, NULL, 'all', 153, 154),
 (87, 35, NULL, NULL, 'frontview', 63, 64),
 (88, 35, NULL, NULL, 'ajax_email_inquiry', 65, 66),
 (89, 35, NULL, NULL, 'ajax_email_newsletter', 67, 68),
 (90, 35, NULL, NULL, 'contact_us', 69, 70),
-(91, 1, NULL, NULL, 'Profile', 150, 159),
-(92, 91, NULL, NULL, 'index', 151, 152),
-(93, 91, NULL, NULL, 'edit', 153, 154),
-(94, 91, NULL, NULL, 'change_profile_photo', 155, 156),
-(95, 91, NULL, NULL, 'isAuthorized', 157, 158),
-(96, 58, NULL, NULL, 'all', 117, 118),
-(97, 1, NULL, NULL, 'BlogCategories', 160, 173),
-(98, 97, NULL, NULL, 'index', 161, 162),
-(99, 97, NULL, NULL, 'view', 163, 164),
-(100, 97, NULL, NULL, 'add', 165, 166),
-(101, 97, NULL, NULL, 'edit', 167, 168),
-(102, 97, NULL, NULL, 'delete', 169, 170),
-(103, 97, NULL, NULL, 'isAuthorized', 171, 172),
-(104, 1, NULL, NULL, 'Blogs', 174, 197),
-(105, 104, NULL, NULL, 'index', 175, 176),
-(106, 104, NULL, NULL, 'view', 177, 178),
-(107, 104, NULL, NULL, 'add', 179, 180),
-(108, 104, NULL, NULL, 'edit', 181, 182),
-(109, 104, NULL, NULL, 'delete', 183, 184),
-(110, 104, NULL, NULL, 'isAuthorized', 185, 186),
-(111, 1, NULL, NULL, 'Groups', 198, 211),
-(112, 111, NULL, NULL, 'index', 199, 200),
-(113, 111, NULL, NULL, 'view', 201, 202),
-(114, 111, NULL, NULL, 'add', 203, 204),
-(115, 111, NULL, NULL, 'edit', 205, 206),
-(116, 111, NULL, NULL, 'delete', 207, 208),
-(117, 111, NULL, NULL, 'isAuthorized', 209, 210),
-(118, 42, NULL, NULL, 'updatePublish', 87, 88),
-(119, 1, NULL, NULL, 'Industries', 212, 225),
-(120, 119, NULL, NULL, 'index', 213, 214),
-(121, 119, NULL, NULL, 'view', 215, 216),
-(122, 119, NULL, NULL, 'add', 217, 218),
-(123, 119, NULL, NULL, 'edit', 219, 220),
-(124, 119, NULL, NULL, 'delete', 221, 222),
-(125, 119, NULL, NULL, 'isAuthorized', 223, 224),
-(126, 1, NULL, NULL, 'IndustryGroups', 226, 239),
-(127, 126, NULL, NULL, 'index', 227, 228),
-(128, 126, NULL, NULL, 'view', 229, 230),
-(129, 126, NULL, NULL, 'add', 231, 232),
-(130, 126, NULL, NULL, 'edit', 233, 234),
-(131, 126, NULL, NULL, 'delete', 235, 236),
-(132, 126, NULL, NULL, 'isAuthorized', 237, 238),
-(133, 1, NULL, NULL, 'Countries', 240, 253),
-(134, 133, NULL, NULL, 'index', 241, 242),
-(135, 133, NULL, NULL, 'view', 243, 244),
-(136, 133, NULL, NULL, 'add', 245, 246),
-(137, 133, NULL, NULL, 'edit', 247, 248),
-(138, 133, NULL, NULL, 'delete', 249, 250),
-(139, 133, NULL, NULL, 'isAuthorized', 251, 252),
-(140, 1, NULL, NULL, 'States', 254, 267),
-(141, 140, NULL, NULL, 'view', 255, 256),
-(142, 140, NULL, NULL, 'add', 257, 258),
-(143, 140, NULL, NULL, 'edit', 259, 260),
-(144, 140, NULL, NULL, 'delete', 261, 262),
-(145, 140, NULL, NULL, 'isAuthorized', 263, 264),
-(146, 140, NULL, NULL, 'index', 265, 266),
-(147, 1, NULL, NULL, 'Companies', 268, 281),
-(148, 147, NULL, NULL, 'index', 269, 270),
-(149, 147, NULL, NULL, 'view', 271, 272),
-(150, 147, NULL, NULL, 'add', 273, 274),
-(151, 147, NULL, NULL, 'edit', 275, 276),
-(152, 147, NULL, NULL, 'delete', 277, 278),
-(153, 147, NULL, NULL, 'isAuthorized', 279, 280),
-(154, 1, NULL, NULL, 'FeaturedCompanies', 282, 295),
-(155, 154, NULL, NULL, 'index', 283, 284),
-(156, 154, NULL, NULL, 'view', 285, 286),
-(157, 154, NULL, NULL, 'add', 287, 288),
-(158, 154, NULL, NULL, 'edit', 289, 290),
-(159, 154, NULL, NULL, 'delete', 291, 292),
-(160, 154, NULL, NULL, 'isAuthorized', 293, 294),
-(161, 1, NULL, NULL, 'Candidates', 296, 315),
-(162, 161, NULL, NULL, 'index', 297, 298),
-(163, 161, NULL, NULL, 'view', 299, 300),
-(164, 161, NULL, NULL, 'add', 301, 302),
-(165, 161, NULL, NULL, 'edit', 303, 304),
-(166, 161, NULL, NULL, 'delete', 305, 306),
-(167, 161, NULL, NULL, 'isAuthorized', 307, 308),
-(168, 1, NULL, NULL, 'Opportunities', 316, 339),
-(169, 168, NULL, NULL, 'index', 317, 318),
-(170, 168, NULL, NULL, 'view', 319, 320),
-(171, 168, NULL, NULL, 'add', 321, 322),
-(172, 168, NULL, NULL, 'edit', 323, 324),
-(173, 168, NULL, NULL, 'delete', 325, 326),
-(174, 168, NULL, NULL, 'isAuthorized', 327, 328),
-(175, 1, NULL, NULL, 'OpportunityTypes', 340, 353),
-(176, 175, NULL, NULL, 'index', 341, 342),
-(177, 175, NULL, NULL, 'view', 343, 344),
-(178, 175, NULL, NULL, 'add', 345, 346),
-(179, 175, NULL, NULL, 'edit', 347, 348),
-(180, 175, NULL, NULL, 'delete', 349, 350),
-(181, 175, NULL, NULL, 'isAuthorized', 351, 352),
-(182, 104, NULL, NULL, 'front_listing', 187, 188),
-(183, 104, NULL, NULL, 'front_view', 189, 190),
-(184, 161, NULL, NULL, 'register', 309, 310),
-(185, 1, NULL, NULL, 'Main', 354, 361),
-(186, 185, NULL, NULL, 'index', 355, 356),
-(187, 185, NULL, NULL, 'isAuthorized', 357, 358),
-(188, 185, NULL, NULL, 'cell', 359, 360),
-(189, 1, NULL, NULL, 'OpportunityStatuses', 362, 375),
-(190, 189, NULL, NULL, 'index', 363, 364),
-(191, 189, NULL, NULL, 'view', 365, 366),
-(192, 189, NULL, NULL, 'add', 367, 368),
-(193, 189, NULL, NULL, 'edit', 369, 370),
-(194, 189, NULL, NULL, 'delete', 371, 372),
-(195, 189, NULL, NULL, 'isAuthorized', 373, 374),
+(91, 1, NULL, NULL, 'Profile', 156, 165),
+(92, 91, NULL, NULL, 'index', 157, 158),
+(93, 91, NULL, NULL, 'edit', 159, 160),
+(94, 91, NULL, NULL, 'change_profile_photo', 161, 162),
+(95, 91, NULL, NULL, 'isAuthorized', 163, 164),
+(96, 58, NULL, NULL, 'all', 123, 124),
+(97, 1, NULL, NULL, 'BlogCategories', 166, 179),
+(98, 97, NULL, NULL, 'index', 167, 168),
+(99, 97, NULL, NULL, 'view', 169, 170),
+(100, 97, NULL, NULL, 'add', 171, 172),
+(101, 97, NULL, NULL, 'edit', 173, 174),
+(102, 97, NULL, NULL, 'delete', 175, 176),
+(103, 97, NULL, NULL, 'isAuthorized', 177, 178),
+(104, 1, NULL, NULL, 'Blogs', 180, 203),
+(105, 104, NULL, NULL, 'index', 181, 182),
+(106, 104, NULL, NULL, 'view', 183, 184),
+(107, 104, NULL, NULL, 'add', 185, 186),
+(108, 104, NULL, NULL, 'edit', 187, 188),
+(109, 104, NULL, NULL, 'delete', 189, 190),
+(110, 104, NULL, NULL, 'isAuthorized', 191, 192),
+(111, 1, NULL, NULL, 'Groups', 204, 217),
+(112, 111, NULL, NULL, 'index', 205, 206),
+(113, 111, NULL, NULL, 'view', 207, 208),
+(114, 111, NULL, NULL, 'add', 209, 210),
+(115, 111, NULL, NULL, 'edit', 211, 212),
+(116, 111, NULL, NULL, 'delete', 213, 214),
+(117, 111, NULL, NULL, 'isAuthorized', 215, 216),
+(118, 42, NULL, NULL, 'updatePublish', 93, 94),
+(119, 1, NULL, NULL, 'Industries', 218, 231),
+(120, 119, NULL, NULL, 'index', 219, 220),
+(121, 119, NULL, NULL, 'view', 221, 222),
+(122, 119, NULL, NULL, 'add', 223, 224),
+(123, 119, NULL, NULL, 'edit', 225, 226),
+(124, 119, NULL, NULL, 'delete', 227, 228),
+(125, 119, NULL, NULL, 'isAuthorized', 229, 230),
+(126, 1, NULL, NULL, 'IndustryGroups', 232, 245),
+(127, 126, NULL, NULL, 'index', 233, 234),
+(128, 126, NULL, NULL, 'view', 235, 236),
+(129, 126, NULL, NULL, 'add', 237, 238),
+(130, 126, NULL, NULL, 'edit', 239, 240),
+(131, 126, NULL, NULL, 'delete', 241, 242),
+(132, 126, NULL, NULL, 'isAuthorized', 243, 244),
+(133, 1, NULL, NULL, 'Countries', 246, 259),
+(134, 133, NULL, NULL, 'index', 247, 248),
+(135, 133, NULL, NULL, 'view', 249, 250),
+(136, 133, NULL, NULL, 'add', 251, 252),
+(137, 133, NULL, NULL, 'edit', 253, 254),
+(138, 133, NULL, NULL, 'delete', 255, 256),
+(139, 133, NULL, NULL, 'isAuthorized', 257, 258),
+(140, 1, NULL, NULL, 'States', 260, 273),
+(141, 140, NULL, NULL, 'view', 261, 262),
+(142, 140, NULL, NULL, 'add', 263, 264),
+(143, 140, NULL, NULL, 'edit', 265, 266),
+(144, 140, NULL, NULL, 'delete', 267, 268),
+(145, 140, NULL, NULL, 'isAuthorized', 269, 270),
+(146, 140, NULL, NULL, 'index', 271, 272),
+(147, 1, NULL, NULL, 'Companies', 274, 287),
+(148, 147, NULL, NULL, 'index', 275, 276),
+(149, 147, NULL, NULL, 'view', 277, 278),
+(150, 147, NULL, NULL, 'add', 279, 280),
+(151, 147, NULL, NULL, 'edit', 281, 282),
+(152, 147, NULL, NULL, 'delete', 283, 284),
+(153, 147, NULL, NULL, 'isAuthorized', 285, 286),
+(154, 1, NULL, NULL, 'FeaturedCompanies', 288, 301),
+(155, 154, NULL, NULL, 'index', 289, 290),
+(156, 154, NULL, NULL, 'view', 291, 292),
+(157, 154, NULL, NULL, 'add', 293, 294),
+(158, 154, NULL, NULL, 'edit', 295, 296),
+(159, 154, NULL, NULL, 'delete', 297, 298),
+(160, 154, NULL, NULL, 'isAuthorized', 299, 300),
+(161, 1, NULL, NULL, 'Candidates', 302, 325),
+(162, 161, NULL, NULL, 'index', 303, 304),
+(163, 161, NULL, NULL, 'view', 305, 306),
+(164, 161, NULL, NULL, 'add', 307, 308),
+(165, 161, NULL, NULL, 'edit', 309, 310),
+(166, 161, NULL, NULL, 'delete', 311, 312),
+(167, 161, NULL, NULL, 'isAuthorized', 313, 314),
+(168, 1, NULL, NULL, 'Opportunities', 326, 353),
+(169, 168, NULL, NULL, 'index', 327, 328),
+(170, 168, NULL, NULL, 'view', 329, 330),
+(171, 168, NULL, NULL, 'add', 331, 332),
+(172, 168, NULL, NULL, 'edit', 333, 334),
+(173, 168, NULL, NULL, 'delete', 335, 336),
+(174, 168, NULL, NULL, 'isAuthorized', 337, 338),
+(175, 1, NULL, NULL, 'OpportunityTypes', 354, 367),
+(176, 175, NULL, NULL, 'index', 355, 356),
+(177, 175, NULL, NULL, 'view', 357, 358),
+(178, 175, NULL, NULL, 'add', 359, 360),
+(179, 175, NULL, NULL, 'edit', 361, 362),
+(180, 175, NULL, NULL, 'delete', 363, 364),
+(181, 175, NULL, NULL, 'isAuthorized', 365, 366),
+(182, 104, NULL, NULL, 'front_listing', 193, 194),
+(183, 104, NULL, NULL, 'front_view', 195, 196),
+(184, 161, NULL, NULL, 'register', 315, 316),
+(185, 1, NULL, NULL, 'Main', 368, 375),
+(186, 185, NULL, NULL, 'index', 369, 370),
+(187, 185, NULL, NULL, 'isAuthorized', 371, 372),
+(188, 185, NULL, NULL, 'cell', 373, 374),
+(189, 1, NULL, NULL, 'OpportunityStatuses', 376, 389),
+(190, 189, NULL, NULL, 'index', 377, 378),
+(191, 189, NULL, NULL, 'view', 379, 380),
+(192, 189, NULL, NULL, 'add', 381, 382),
+(193, 189, NULL, NULL, 'edit', 383, 384),
+(194, 189, NULL, NULL, 'delete', 385, 386),
+(195, 189, NULL, NULL, 'isAuthorized', 387, 388),
 (196, 14, NULL, NULL, 'candidate_dashboard', 21, 22),
 (197, 14, NULL, NULL, 'company_dashboard', 23, 24),
-(198, 1, NULL, NULL, 'MemberLogin', 376, 381),
-(199, 198, NULL, NULL, 'index', 377, 378),
-(200, 198, NULL, NULL, 'isAuthorized', 379, 380),
-(201, 1, NULL, NULL, 'OpportunitySellingPoints', 382, 395),
-(202, 201, NULL, NULL, 'index', 383, 384),
-(203, 201, NULL, NULL, 'view', 385, 386),
-(204, 201, NULL, NULL, 'add', 387, 388),
-(205, 201, NULL, NULL, 'edit', 389, 390),
-(206, 201, NULL, NULL, 'delete', 391, 392),
-(207, 201, NULL, NULL, 'isAuthorized', 393, 394),
-(208, 1, NULL, NULL, 'SalaryTypes', 396, 409),
-(209, 208, NULL, NULL, 'index', 397, 398),
-(210, 208, NULL, NULL, 'view', 399, 400),
-(211, 208, NULL, NULL, 'add', 401, 402),
-(212, 208, NULL, NULL, 'edit', 403, 404),
-(213, 208, NULL, NULL, 'delete', 405, 406),
-(214, 208, NULL, NULL, 'isAuthorized', 407, 408),
-(215, 161, NULL, NULL, 'edit_profile', 311, 312),
-(216, 1, NULL, NULL, 'WorkTypes', 410, 423),
-(217, 216, NULL, NULL, 'index', 411, 412),
-(218, 216, NULL, NULL, 'view', 413, 414),
-(219, 216, NULL, NULL, 'add', 415, 416),
-(220, 216, NULL, NULL, 'edit', 417, 418),
-(221, 216, NULL, NULL, 'delete', 419, 420),
-(222, 216, NULL, NULL, 'isAuthorized', 421, 422),
-(223, 1, NULL, NULL, 'BlogComments', 424, 441),
-(224, 223, NULL, NULL, 'index', 425, 426),
-(225, 223, NULL, NULL, 'view', 427, 428),
-(226, 223, NULL, NULL, 'add', 429, 430),
-(227, 223, NULL, NULL, 'edit', 431, 432),
-(228, 223, NULL, NULL, 'delete', 433, 434),
-(229, 223, NULL, NULL, 'isAuthorized', 435, 436),
-(230, 161, NULL, NULL, 'send_resume', 313, 314),
-(231, 1, NULL, NULL, 'ForgotPassword', 442, 449),
-(232, 231, NULL, NULL, 'index', 443, 444),
-(233, 231, NULL, NULL, 'reset', 445, 446),
-(234, 231, NULL, NULL, 'isAuthorized', 447, 448),
-(235, 168, NULL, NULL, 'front_listing', 329, 330),
-(236, 168, NULL, NULL, 'search', 331, 332),
-(237, 168, NULL, NULL, 'search_result', 333, 334),
-(238, 168, NULL, NULL, 'front_view', 335, 336),
-(239, 168, NULL, NULL, 'ajax_load_sub_classifications', 337, 338),
+(198, 1, NULL, NULL, 'MemberLogin', 390, 395),
+(199, 198, NULL, NULL, 'index', 391, 392),
+(200, 198, NULL, NULL, 'isAuthorized', 393, 394),
+(201, 1, NULL, NULL, 'OpportunitySellingPoints', 396, 409),
+(202, 201, NULL, NULL, 'index', 397, 398),
+(203, 201, NULL, NULL, 'view', 399, 400),
+(204, 201, NULL, NULL, 'add', 401, 402),
+(205, 201, NULL, NULL, 'edit', 403, 404),
+(206, 201, NULL, NULL, 'delete', 405, 406),
+(207, 201, NULL, NULL, 'isAuthorized', 407, 408),
+(208, 1, NULL, NULL, 'SalaryTypes', 410, 423),
+(209, 208, NULL, NULL, 'index', 411, 412),
+(210, 208, NULL, NULL, 'view', 413, 414),
+(211, 208, NULL, NULL, 'add', 415, 416),
+(212, 208, NULL, NULL, 'edit', 417, 418),
+(213, 208, NULL, NULL, 'delete', 419, 420),
+(214, 208, NULL, NULL, 'isAuthorized', 421, 422),
+(215, 161, NULL, NULL, 'edit_profile', 317, 318),
+(216, 1, NULL, NULL, 'WorkTypes', 424, 437),
+(217, 216, NULL, NULL, 'index', 425, 426),
+(218, 216, NULL, NULL, 'view', 427, 428),
+(219, 216, NULL, NULL, 'add', 429, 430),
+(220, 216, NULL, NULL, 'edit', 431, 432),
+(221, 216, NULL, NULL, 'delete', 433, 434),
+(222, 216, NULL, NULL, 'isAuthorized', 435, 436),
+(223, 1, NULL, NULL, 'BlogComments', 438, 455),
+(224, 223, NULL, NULL, 'index', 439, 440),
+(225, 223, NULL, NULL, 'view', 441, 442),
+(226, 223, NULL, NULL, 'add', 443, 444),
+(227, 223, NULL, NULL, 'edit', 445, 446),
+(228, 223, NULL, NULL, 'delete', 447, 448),
+(229, 223, NULL, NULL, 'isAuthorized', 449, 450),
+(230, 161, NULL, NULL, 'send_resume', 319, 320),
+(231, 1, NULL, NULL, 'ForgotPassword', 456, 463),
+(232, 231, NULL, NULL, 'index', 457, 458),
+(233, 231, NULL, NULL, 'reset', 459, 460),
+(234, 231, NULL, NULL, 'isAuthorized', 461, 462),
+(235, 168, NULL, NULL, 'front_listing', 339, 340),
+(236, 168, NULL, NULL, 'search', 341, 342),
+(237, 168, NULL, NULL, 'search_result', 343, 344),
+(238, 168, NULL, NULL, 'front_view', 345, 346),
+(239, 168, NULL, NULL, 'ajax_load_sub_classifications', 347, 348),
 (240, 14, NULL, NULL, 'change_password', 25, 26),
-(241, 104, NULL, NULL, 'updatePublish', 191, 192),
-(242, 223, NULL, NULL, 'blog', 437, 438),
-(244, 223, NULL, NULL, 'updatePublic', 439, 440),
-(245, 104, NULL, NULL, 'category_front_listing', 193, 194),
-(246, 104, NULL, NULL, 'post_comment', 195, 196),
-(247, 1, NULL, NULL, 'JobRoles', 450, 463),
-(248, 247, NULL, NULL, 'index', 451, 452),
-(249, 247, NULL, NULL, 'view', 453, 454),
-(250, 247, NULL, NULL, 'add', 455, 456),
-(251, 247, NULL, NULL, 'edit', 457, 458),
-(252, 247, NULL, NULL, 'delete', 459, 460),
-(253, 247, NULL, NULL, 'isAuthorized', 461, 462),
-(254, 35, NULL, NULL, 'updatePublish', 71, 72);
+(241, 104, NULL, NULL, 'updatePublish', 197, 198),
+(242, 223, NULL, NULL, 'blog', 451, 452),
+(244, 223, NULL, NULL, 'updatePublic', 453, 454),
+(245, 104, NULL, NULL, 'category_front_listing', 199, 200),
+(246, 104, NULL, NULL, 'post_comment', 201, 202),
+(247, 1, NULL, NULL, 'JobRoles', 464, 477),
+(248, 247, NULL, NULL, 'index', 465, 466),
+(249, 247, NULL, NULL, 'view', 467, 468),
+(250, 247, NULL, NULL, 'add', 469, 470),
+(251, 247, NULL, NULL, 'edit', 471, 472),
+(252, 247, NULL, NULL, 'delete', 473, 474),
+(253, 247, NULL, NULL, 'isAuthorized', 475, 476),
+(254, 35, NULL, NULL, 'updatePublish', 71, 72),
+(255, 1, NULL, NULL, 'Areas', 478, 491),
+(256, 255, NULL, NULL, 'index', 479, 480),
+(257, 255, NULL, NULL, 'view', 481, 482),
+(258, 255, NULL, NULL, 'add', 483, 484),
+(259, 255, NULL, NULL, 'edit', 485, 486),
+(260, 255, NULL, NULL, 'delete', 487, 488),
+(261, 255, NULL, NULL, 'isAuthorized', 489, 490),
+(262, 1, NULL, NULL, 'CandidateJobRoles', 492, 505),
+(263, 262, NULL, NULL, 'index', 493, 494),
+(264, 262, NULL, NULL, 'view', 495, 496),
+(265, 262, NULL, NULL, 'add', 497, 498),
+(266, 262, NULL, NULL, 'edit', 499, 500),
+(267, 262, NULL, NULL, 'delete', 501, 502),
+(268, 262, NULL, NULL, 'isAuthorized', 503, 504),
+(269, 161, NULL, NULL, 'edit_job_roles', 321, 322),
+(270, 161, NULL, NULL, 'upload_resume', 323, 324),
+(271, 1, NULL, NULL, 'Locations', 506, 519),
+(272, 271, NULL, NULL, 'index', 507, 508),
+(273, 271, NULL, NULL, 'view', 509, 510),
+(274, 271, NULL, NULL, 'add', 511, 512),
+(275, 271, NULL, NULL, 'edit', 513, 514),
+(276, 271, NULL, NULL, 'delete', 515, 516),
+(277, 271, NULL, NULL, 'isAuthorized', 517, 518),
+(278, 168, NULL, NULL, 'advance_search', 349, 350),
+(279, 168, NULL, NULL, 'front_apply', 351, 352),
+(280, 35, NULL, NULL, 'ajax_job_roles_description', 73, 74),
+(281, 35, NULL, NULL, 'about_us', 75, 76),
+(282, 35, NULL, NULL, 'why_us', 77, 78),
+(283, 1, NULL, NULL, 'Suburbs', 520, 533),
+(284, 283, NULL, NULL, 'index', 521, 522),
+(285, 283, NULL, NULL, 'view', 523, 524),
+(286, 283, NULL, NULL, 'add', 525, 526),
+(287, 283, NULL, NULL, 'edit', 527, 528),
+(288, 283, NULL, NULL, 'delete', 529, 530),
+(289, 283, NULL, NULL, 'isAuthorized', 531, 532);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `areas`
+--
+
+DROP TABLE IF EXISTS `areas`;
+CREATE TABLE `areas` (
+  `id` int(11) NOT NULL,
+  `location_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `areas`
+--
+
+INSERT INTO `areas` (`id`, `location_id`, `name`, `created`, `modified`) VALUES
+(1, 1, 'area 1 ', '2017-08-14 17:51:58', '2017-08-14 17:51:58'),
+(2, 1, 'area 2', '2017-08-14 17:57:24', '2017-08-14 17:57:24');
 
 -- --------------------------------------------------------
 
@@ -306,18 +360,15 @@ INSERT INTO `acos` (`id`, `parent_id`, `model`, `foreign_key`, `alias`, `lft`, `
 --
 
 DROP TABLE IF EXISTS `aros`;
-CREATE TABLE IF NOT EXISTS `aros` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `aros` (
+  `id` int(11) NOT NULL,
   `parent_id` int(11) DEFAULT NULL,
   `model` varchar(255) DEFAULT NULL,
   `foreign_key` int(11) DEFAULT NULL,
   `alias` varchar(255) DEFAULT NULL,
   `lft` int(11) DEFAULT NULL,
-  `rght` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `lft` (`lft`,`rght`),
-  KEY `alias` (`alias`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+  `rght` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `aros`
@@ -358,18 +409,15 @@ INSERT INTO `aros` (`id`, `parent_id`, `model`, `foreign_key`, `alias`, `lft`, `
 --
 
 DROP TABLE IF EXISTS `aros_acos`;
-CREATE TABLE IF NOT EXISTS `aros_acos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `aros_acos` (
+  `id` int(11) NOT NULL,
   `aro_id` int(11) NOT NULL,
   `aco_id` int(11) NOT NULL,
   `_create` varchar(2) NOT NULL DEFAULT '0',
   `_read` varchar(2) NOT NULL DEFAULT '0',
   `_update` varchar(2) NOT NULL DEFAULT '0',
-  `_delete` varchar(2) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `aro_id` (`aro_id`,`aco_id`),
-  KEY `aco_id` (`aco_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `_delete` varchar(2) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `aros_acos`
@@ -385,8 +433,8 @@ INSERT INTO `aros_acos` (`id`, `aro_id`, `aco_id`, `_create`, `_read`, `_update`
 --
 
 DROP TABLE IF EXISTS `blogs`;
-CREATE TABLE IF NOT EXISTS `blogs` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `blogs` (
+  `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `excerpt` varchar(255) NOT NULL,
   `body` text NOT NULL,
@@ -395,9 +443,8 @@ CREATE TABLE IF NOT EXISTS `blogs` (
   `vcount` int(11) NOT NULL,
   `publish` tinyint(1) NOT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `blogs`
@@ -416,15 +463,14 @@ INSERT INTO `blogs` (`id`, `title`, `excerpt`, `body`, `thumbnail`, `blog_catego
 --
 
 DROP TABLE IF EXISTS `blog_categories`;
-CREATE TABLE IF NOT EXISTS `blog_categories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `blog_categories` (
+  `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `sorting` int(11) NOT NULL,
   `thumbnail` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `blog_categories`
@@ -441,8 +487,8 @@ INSERT INTO `blog_categories` (`id`, `title`, `sorting`, `thumbnail`, `created`,
 --
 
 DROP TABLE IF EXISTS `blog_comments`;
-CREATE TABLE IF NOT EXISTS `blog_comments` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `blog_comments` (
+  `id` int(11) NOT NULL,
   `blog_id` int(11) NOT NULL,
   `name` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -450,9 +496,8 @@ CREATE TABLE IF NOT EXISTS `blog_comments` (
   `comment` text COLLATE utf8_unicode_ci NOT NULL,
   `is_public` smallint(2) NOT NULL,
   `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `blog_comments`
@@ -469,8 +514,8 @@ INSERT INTO `blog_comments` (`id`, `blog_id`, `name`, `email`, `website`, `comme
 --
 
 DROP TABLE IF EXISTS `candidates`;
-CREATE TABLE IF NOT EXISTS `candidates` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `candidates` (
+  `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `uid` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
@@ -485,9 +530,8 @@ CREATE TABLE IF NOT EXISTS `candidates` (
   `is_manage_service_provider` smallint(2) DEFAULT '0',
   `service_provider` varchar(110) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=29 ;
+  `modified` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `candidates`
@@ -519,13 +563,12 @@ INSERT INTO `candidates` (`id`, `user_id`, `uid`, `email`, `country_id`, `state_
 --
 
 DROP TABLE IF EXISTS `candidate_job_roles`;
-CREATE TABLE IF NOT EXISTS `candidate_job_roles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `candidate_job_roles` (
+  `id` int(11) NOT NULL,
   `candidate_id` int(11) NOT NULL,
   `job_role_id` int(11) NOT NULL,
-  `created` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=19 ;
+  `created` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `candidate_job_roles`
@@ -552,8 +595,8 @@ INSERT INTO `candidate_job_roles` (`id`, `candidate_id`, `job_role_id`, `created
 --
 
 DROP TABLE IF EXISTS `companies`;
-CREATE TABLE IF NOT EXISTS `companies` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `companies` (
+  `id` int(11) NOT NULL,
   `uid` varchar(50) NOT NULL,
   `user_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -567,11 +610,8 @@ CREATE TABLE IF NOT EXISTS `companies` (
   `zipcode` varchar(11) NOT NULL,
   `description` text NOT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `uid` (`uid`),
-  KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `companies`
@@ -588,15 +628,13 @@ INSERT INTO `companies` (`id`, `uid`, `user_id`, `name`, `phone`, `fax`, `photo`
 --
 
 DROP TABLE IF EXISTS `countries`;
-CREATE TABLE IF NOT EXISTS `countries` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `countries` (
+  `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `iso` varchar(2) NOT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `iso` (`iso`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `countries`
@@ -613,13 +651,12 @@ INSERT INTO `countries` (`id`, `name`, `iso`, `created`, `modified`) VALUES
 --
 
 DROP TABLE IF EXISTS `entity_types`;
-CREATE TABLE IF NOT EXISTS `entity_types` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `entity_types` (
+  `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `entity_types`
@@ -638,8 +675,8 @@ INSERT INTO `entity_types` (`id`, `name`, `created`, `modified`) VALUES
 --
 
 DROP TABLE IF EXISTS `featured_companies`;
-CREATE TABLE IF NOT EXISTS `featured_companies` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `featured_companies` (
+  `id` int(11) NOT NULL,
   `entity_id` int(11) NOT NULL,
   `cover` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `map` text COLLATE utf8_unicode_ci NOT NULL,
@@ -652,9 +689,8 @@ CREATE TABLE IF NOT EXISTS `featured_companies` (
   `sorting` int(11) NOT NULL,
   `vcount` int(11) NOT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=157 ;
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `featured_companies`
@@ -835,13 +871,12 @@ INSERT INTO `featured_companies` (`id`, `entity_id`, `cover`, `map`, `value`, `g
 --
 
 DROP TABLE IF EXISTS `groups`;
-CREATE TABLE IF NOT EXISTS `groups` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+CREATE TABLE `groups` (
+  `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(180) CHARACTER SET latin1 NOT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `groups`
@@ -859,8 +894,8 @@ INSERT INTO `groups` (`id`, `name`, `created`, `modified`) VALUES
 --
 
 DROP TABLE IF EXISTS `industries`;
-CREATE TABLE IF NOT EXISTS `industries` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `industries` (
+  `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `industry_group_id` int(11) NOT NULL,
   `content` text NOT NULL,
@@ -868,10 +903,8 @@ CREATE TABLE IF NOT EXISTS `industries` (
   `meta_keywords` text NOT NULL,
   `meta_description` text NOT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=114 ;
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `industries`
@@ -991,8 +1024,8 @@ INSERT INTO `industries` (`id`, `name`, `industry_group_id`, `content`, `meta_ti
 --
 
 DROP TABLE IF EXISTS `industry_groups`;
-CREATE TABLE IF NOT EXISTS `industry_groups` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `industry_groups` (
+  `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL,
   `content` text NOT NULL,
@@ -1000,9 +1033,8 @@ CREATE TABLE IF NOT EXISTS `industry_groups` (
   `meta_keywords` text NOT NULL,
   `meta_description` text NOT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `industry_groups`
@@ -1036,14 +1068,13 @@ INSERT INTO `industry_groups` (`id`, `name`, `slug`, `content`, `meta_title`, `m
 --
 
 DROP TABLE IF EXISTS `job_roles`;
-CREATE TABLE IF NOT EXISTS `job_roles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `job_roles` (
+  `id` int(11) NOT NULL,
   `name` varchar(110) COLLATE utf8_unicode_ci NOT NULL,
   `definition` text COLLATE utf8_unicode_ci,
   `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `job_roles`
@@ -1057,12 +1088,34 @@ INSERT INTO `job_roles` (`id`, `name`, `definition`, `created`, `modified`) VALU
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `locations`
+--
+
+DROP TABLE IF EXISTS `locations`;
+CREATE TABLE `locations` (
+  `id` int(11) NOT NULL,
+  `state_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `locations`
+--
+
+INSERT INTO `locations` (`id`, `state_id`, `name`, `created`, `modified`) VALUES
+(1, 2, 'Addidas', '2017-08-14 17:49:46', '2017-08-14 17:49:46');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `opportunities`
 --
 
 DROP TABLE IF EXISTS `opportunities`;
-CREATE TABLE IF NOT EXISTS `opportunities` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `opportunities` (
+  `id` int(11) NOT NULL,
   `uid` varchar(50) NOT NULL,
   `industry_id` int(11) NOT NULL,
   `opportunity_type_id` int(11) NOT NULL,
@@ -1086,9 +1139,8 @@ CREATE TABLE IF NOT EXISTS `opportunities` (
   `display_salary_on_ads` smallint(2) NOT NULL DEFAULT '0',
   `salary_details_displayed` text NOT NULL,
   `salary_type_id` int(11) NOT NULL,
-  `visit_count` int(11) NOT NULL COMMENT 'add impression on postings',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+  `visit_count` int(11) NOT NULL COMMENT 'add impression on postings'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `opportunities`
@@ -1111,14 +1163,13 @@ INSERT INTO `opportunities` (`id`, `uid`, `industry_id`, `opportunity_type_id`, 
 --
 
 DROP TABLE IF EXISTS `opportunity_selling_points`;
-CREATE TABLE IF NOT EXISTS `opportunity_selling_points` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `opportunity_selling_points` (
+  `id` int(11) NOT NULL,
   `opportunity_id` int(11) NOT NULL,
   `key_selling_points` text COLLATE utf8_unicode_ci NOT NULL,
   `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=17 ;
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `opportunity_selling_points`
@@ -1149,13 +1200,12 @@ INSERT INTO `opportunity_selling_points` (`id`, `opportunity_id`, `key_selling_p
 --
 
 DROP TABLE IF EXISTS `opportunity_statuses`;
-CREATE TABLE IF NOT EXISTS `opportunity_statuses` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `opportunity_statuses` (
+  `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `opportunity_statuses`
@@ -1175,13 +1225,12 @@ INSERT INTO `opportunity_statuses` (`id`, `name`, `created`, `modified`) VALUES
 --
 
 DROP TABLE IF EXISTS `opportunity_types`;
-CREATE TABLE IF NOT EXISTS `opportunity_types` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `opportunity_types` (
+  `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `opportunity_types`
@@ -1205,8 +1254,8 @@ INSERT INTO `opportunity_types` (`id`, `name`, `created`, `modified`) VALUES
 --
 
 DROP TABLE IF EXISTS `pages`;
-CREATE TABLE IF NOT EXISTS `pages` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+CREATE TABLE `pages` (
+  `id` int(10) UNSIGNED NOT NULL,
   `title` varchar(180) CHARACTER SET latin1 NOT NULL,
   `body` text CHARACTER SET latin1 NOT NULL,
   `meta_title` text CHARACTER SET latin1 NOT NULL,
@@ -1215,9 +1264,8 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `is_publish` smallint(11) NOT NULL,
   `sorting` int(11) NOT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `pages`
@@ -1236,13 +1284,12 @@ INSERT INTO `pages` (`id`, `title`, `body`, `meta_title`, `meta_keyword`, `meta_
 --
 
 DROP TABLE IF EXISTS `salary_types`;
-CREATE TABLE IF NOT EXISTS `salary_types` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `salary_types` (
+  `id` int(11) NOT NULL,
   `name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `salary_types`
@@ -1261,8 +1308,8 @@ INSERT INTO `salary_types` (`id`, `name`, `created`, `modified`) VALUES
 --
 
 DROP TABLE IF EXISTS `slides`;
-CREATE TABLE IF NOT EXISTS `slides` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `slides` (
+  `id` int(11) NOT NULL,
   `title` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
   `caption` text COLLATE utf8_unicode_ci NOT NULL,
   `link` varchar(90) COLLATE utf8_unicode_ci NOT NULL,
@@ -1270,9 +1317,8 @@ CREATE TABLE IF NOT EXISTS `slides` (
   `sorting` int(11) NOT NULL,
   `is_publish` int(11) NOT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -1281,14 +1327,13 @@ CREATE TABLE IF NOT EXISTS `slides` (
 --
 
 DROP TABLE IF EXISTS `states`;
-CREATE TABLE IF NOT EXISTS `states` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `states` (
+  `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `country_id` int(11) NOT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `states`
@@ -1301,19 +1346,40 @@ INSERT INTO `states` (`id`, `name`, `country_id`, `created`, `modified`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `suburbs`
+--
+
+DROP TABLE IF EXISTS `suburbs`;
+CREATE TABLE `suburbs` (
+  `id` int(11) NOT NULL,
+  `area_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `suburbs`
+--
+
+INSERT INTO `suburbs` (`id`, `area_id`, `name`, `created`, `modified`) VALUES
+(1, 2, 'suburb 2', '2017-08-14 17:58:19', '2017-08-14 17:58:19');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `testimonials`
 --
 
 DROP TABLE IF EXISTS `testimonials`;
-CREATE TABLE IF NOT EXISTS `testimonials` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `testimonials` (
+  `id` int(11) NOT NULL,
   `name` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
   `position` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
   `content` text COLLATE utf8_unicode_ci NOT NULL,
   `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `testimonials`
@@ -1332,8 +1398,8 @@ INSERT INTO `testimonials` (`id`, `name`, `position`, `content`, `created`, `mod
 --
 
 DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users` (
+  `id` int(10) UNSIGNED NOT NULL,
   `firstname` varchar(80) COLLATE utf8_unicode_ci DEFAULT NULL,
   `lastname` varchar(80) COLLATE utf8_unicode_ci DEFAULT NULL,
   `middlename` varchar(80) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -1345,9 +1411,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `is_active` smallint(2) DEFAULT NULL,
   `is_password_changed` smallint(2) DEFAULT '0',
   `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=23 ;
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `users`
@@ -1381,8 +1446,8 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `middlename`, `username`, `p
 --
 
 DROP TABLE IF EXISTS `user_entities`;
-CREATE TABLE IF NOT EXISTS `user_entities` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `user_entities` (
+  `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `firstname` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
   `middlename` varchar(80) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -1393,9 +1458,8 @@ CREATE TABLE IF NOT EXISTS `user_entities` (
   `is_active` tinyint(2) DEFAULT '0',
   `is_password_changed` tinyint(2) DEFAULT '0',
   `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
+  `modified` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `user_entities`
@@ -1411,13 +1475,12 @@ INSERT INTO `user_entities` (`id`, `user_id`, `firstname`, `middlename`, `lastna
 --
 
 DROP TABLE IF EXISTS `work_types`;
-CREATE TABLE IF NOT EXISTS `work_types` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `work_types` (
+  `id` int(11) NOT NULL,
   `name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `work_types`
@@ -1428,6 +1491,371 @@ INSERT INTO `work_types` (`id`, `name`, `created`, `modified`) VALUES
 (2, 'Part-time', '2016-11-26 03:17:11', '2016-11-26 03:17:11'),
 (3, 'Freelance', '2016-11-26 03:17:18', '2016-11-26 03:17:18');
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `acl_phinxlog`
+--
+ALTER TABLE `acl_phinxlog`
+  ADD PRIMARY KEY (`version`);
+
+--
+-- Indexes for table `acos`
+--
+ALTER TABLE `acos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `lft` (`lft`,`rght`),
+  ADD KEY `alias` (`alias`);
+
+--
+-- Indexes for table `areas`
+--
+ALTER TABLE `areas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `aros`
+--
+ALTER TABLE `aros`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `lft` (`lft`,`rght`),
+  ADD KEY `alias` (`alias`);
+
+--
+-- Indexes for table `aros_acos`
+--
+ALTER TABLE `aros_acos`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `aro_id` (`aro_id`,`aco_id`),
+  ADD KEY `aco_id` (`aco_id`);
+
+--
+-- Indexes for table `blogs`
+--
+ALTER TABLE `blogs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `blog_categories`
+--
+ALTER TABLE `blog_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `blog_comments`
+--
+ALTER TABLE `blog_comments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `candidates`
+--
+ALTER TABLE `candidates`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `candidate_job_roles`
+--
+ALTER TABLE `candidate_job_roles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `companies`
+--
+ALTER TABLE `companies`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `uid` (`uid`),
+  ADD KEY `name` (`name`);
+
+--
+-- Indexes for table `countries`
+--
+ALTER TABLE `countries`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `iso` (`iso`);
+
+--
+-- Indexes for table `entity_types`
+--
+ALTER TABLE `entity_types`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `featured_companies`
+--
+ALTER TABLE `featured_companies`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `groups`
+--
+ALTER TABLE `groups`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `industries`
+--
+ALTER TABLE `industries`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `name` (`name`);
+
+--
+-- Indexes for table `industry_groups`
+--
+ALTER TABLE `industry_groups`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `job_roles`
+--
+ALTER TABLE `job_roles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `locations`
+--
+ALTER TABLE `locations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `opportunities`
+--
+ALTER TABLE `opportunities`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `opportunity_selling_points`
+--
+ALTER TABLE `opportunity_selling_points`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `opportunity_statuses`
+--
+ALTER TABLE `opportunity_statuses`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `opportunity_types`
+--
+ALTER TABLE `opportunity_types`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pages`
+--
+ALTER TABLE `pages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `salary_types`
+--
+ALTER TABLE `salary_types`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `slides`
+--
+ALTER TABLE `slides`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `states`
+--
+ALTER TABLE `states`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `suburbs`
+--
+ALTER TABLE `suburbs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `testimonials`
+--
+ALTER TABLE `testimonials`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user_entities`
+--
+ALTER TABLE `user_entities`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `work_types`
+--
+ALTER TABLE `work_types`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `acos`
+--
+ALTER TABLE `acos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=290;
+--
+-- AUTO_INCREMENT for table `areas`
+--
+ALTER TABLE `areas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `aros`
+--
+ALTER TABLE `aros`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+--
+-- AUTO_INCREMENT for table `aros_acos`
+--
+ALTER TABLE `aros_acos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `blogs`
+--
+ALTER TABLE `blogs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `blog_categories`
+--
+ALTER TABLE `blog_categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `blog_comments`
+--
+ALTER TABLE `blog_comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `candidates`
+--
+ALTER TABLE `candidates`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+--
+-- AUTO_INCREMENT for table `candidate_job_roles`
+--
+ALTER TABLE `candidate_job_roles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+--
+-- AUTO_INCREMENT for table `companies`
+--
+ALTER TABLE `companies`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `countries`
+--
+ALTER TABLE `countries`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `entity_types`
+--
+ALTER TABLE `entity_types`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `featured_companies`
+--
+ALTER TABLE `featured_companies`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;
+--
+-- AUTO_INCREMENT for table `groups`
+--
+ALTER TABLE `groups`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `industries`
+--
+ALTER TABLE `industries`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
+--
+-- AUTO_INCREMENT for table `industry_groups`
+--
+ALTER TABLE `industry_groups`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+--
+-- AUTO_INCREMENT for table `job_roles`
+--
+ALTER TABLE `job_roles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `locations`
+--
+ALTER TABLE `locations`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `opportunities`
+--
+ALTER TABLE `opportunities`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+--
+-- AUTO_INCREMENT for table `opportunity_selling_points`
+--
+ALTER TABLE `opportunity_selling_points`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+--
+-- AUTO_INCREMENT for table `opportunity_statuses`
+--
+ALTER TABLE `opportunity_statuses`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `opportunity_types`
+--
+ALTER TABLE `opportunity_types`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT for table `pages`
+--
+ALTER TABLE `pages`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `salary_types`
+--
+ALTER TABLE `salary_types`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `slides`
+--
+ALTER TABLE `slides`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `states`
+--
+ALTER TABLE `states`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `suburbs`
+--
+ALTER TABLE `suburbs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `testimonials`
+--
+ALTER TABLE `testimonials`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+--
+-- AUTO_INCREMENT for table `user_entities`
+--
+ALTER TABLE `user_entities`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `work_types`
+--
+ALTER TABLE `work_types`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

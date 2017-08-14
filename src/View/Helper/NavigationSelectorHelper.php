@@ -52,6 +52,9 @@ class NavigationSelectorHelper extends Helper
             "blog_comments" => "",
             "job_roles" => "",
             "web" => "",
+            "locations" => "",
+            "areas" => "",
+            "suburbs" => "",
             "system_settings" => ""      
         );
         $navigation[$selected] = "active";
