@@ -61,6 +61,18 @@ class OpportunitiesTable extends Table
             'foreignKey' => 'state_id',
             'joinType' => 'INNER'
         ]);
+        $this->belongsTo('Locations', [
+            'foreignKey' => 'location_id',
+            'joinType' => 'INNER'
+        ]);
+        $this->belongsTo('Areas', [
+            'foreignKey' => 'area_id',
+            'joinType' => 'INNER'
+        ]);
+        $this->belongsTo('Suburbs', [
+            'foreignKey' => 'suburb_id',
+            'joinType' => 'INNER'
+        ]);
         $this->belongsTo('OpportunityStatuses', [
             'foreignKey' => 'opportunity_status_id',
             'joinType' => 'INNER'

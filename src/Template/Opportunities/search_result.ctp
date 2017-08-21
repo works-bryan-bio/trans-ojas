@@ -1,5 +1,16 @@
 <?php use Cake\Utility\Inflector; ?>
 <?php use Cake\Utility\Text; ?>
+<style>
+.selling-points-list{
+    padding: 0px;
+    margin-top:40px;
+    margin-bottom: 40px;
+}
+.selling-points-list li{
+  margin:10px;
+  font-size: 13px;
+}
+</style>
 <div class="apply-for-job-search">
     <div class="apply-for-job-search-inner">
         <div class="wrapper">
@@ -62,7 +73,13 @@
                     <div class="search-result">
                         <div class="row">
                             <div class="col-md-8 col-xs-12">
-                                <h4><?php echo $opportunity->title; ?></h4>
+                                <h4><?php echo $opportunity->title; ?></h4>                                
+                                <ul class="selling-points-list">
+                                <?php foreach( $opportunity->opportunity_selling_points as $sp ){ ?>
+                                  <li><?php echo $sp->key_selling_points; ?></li>
+                                <?php } ?>
+                                </ul>
+                                <h4>Job Description</h4>
                                 <?php echo Text::excerpt($opportunity->description, 'method', 200, '...'); ?>                                  
                             </div>                        
                             <div class="col-md-4 col-xs-12">
@@ -70,17 +87,20 @@
                                     <table class="table">
                                       <tbody>
                                         <tr>
+                                          <th scope="row">Salary Details:</th>
+                                          <td><?php echo $opportunity->salary_details_displayed; ?></td>
+                                        </tr>
+                                        <tr>
                                           <th scope="row">Location:</th>
-                                          <td><?php echo $opportunity->country->name; ?></td>
+                                          <td>
+                                            <?php echo $opportunity->state->name . ', ' . $opportunity->location->name . ', ' . $opportunity->area->name . ', ' . $opportunity->suburb->name; ?>
+                                          </td>
                                         </tr>
                                         <tr>
                                           <th scope="row">Job Type:</th>
                                           <td><?php echo $opportunity->work_type->name; ?></td>
                                         </tr>
-                                        <tr>
-                                          <th scope="row">Salary:</th>
-                                          <td><?php echo $opportunity->salary_details_displayed; ?></td>
-                                        </tr>
+                                        
                                       </tbody>
                                     </table>
                                     <div class="search-component-read-more">

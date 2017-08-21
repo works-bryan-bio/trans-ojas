@@ -242,9 +242,10 @@ class OpportunitiesController extends AppController
 
         $salaryTypes = $this->Opportunities->SalaryTypes->find('list', ['limit' => 200]);
         $workTypes   = $this->Opportunities->WorkTypes->find('list', ['limit' => 200]);
+        $default_industry_group_id = 6;
 
         $this->viewBuilder()->layout("job_list");    
-        $this->set(compact('industryGroups','countries','workTypes','salaryTypes'));    
+        $this->set(compact('industryGroups','countries','workTypes','salaryTypes','default_industry_group_id'));    
     }
 
     /**
@@ -257,19 +258,20 @@ class OpportunitiesController extends AppController
         $data = $this->request->query;
         if( $data['industry_id'] == 'all' || !isset($data['industry_id']) ){
             $opportunities = $this->Opportunities->find('all')
-                ->contain(['OpportunityTypes', 'Countries', 'States', 'OpportunityStatuses', 'OpportunitySellingPoints', 'Industries' => ['IndustryGroups'], 'SalaryTypes', 'WorkTypes'])
+                ->contain(['OpportunityTypes', 'Countries', 'States', 'Areas', 'Locations', 'Suburbs', 'OpportunityStatuses', 'OpportunitySellingPoints', 'Industries' => ['IndustryGroups'], 'SalaryTypes', 'WorkTypes'])
                 ->where([
                     'Opportunities.title LIKE' => "%" . $data['keywords'] . "%",
+                    'Opportunities.description LIKE' => "%" . $data['keywords'] . "%",
                     'Opportunities.state_id' => $data['location_id'],
                     'Opportunities.work_type_id' => $data['work_type_id'],
                     'Opportunities.salary_type_id' => $data['salary_type_id'],
                     'Industries.industry_group_id' => $data['industry_group_id'],
-                    'Opportunities.min_salary >=' => $data['min_salary'], 'Opportunities.max_salary <=' => $data['max_salary']
+                    'Opportunities.min_salary >=' => $data['min_salary'], 'Opportunities.max_salary <=' => $data['max_salary']                    
                 ])
             ;
         }else{
             $opportunities = $this->Opportunities->find('all')
-                ->contain(['OpportunityTypes', 'Countries', 'States', 'OpportunityStatuses', 'OpportunitySellingPoints', 'Industries' => ['IndustryGroups'], 'SalaryTypes', 'WorkTypes'])
+                ->contain(['OpportunityTypes', 'Countries', 'States', 'Areas', 'Locations', 'Suburbs', 'OpportunityStatuses', 'OpportunitySellingPoints', 'Industries' => ['IndustryGroups'], 'SalaryTypes', 'WorkTypes'])
                 ->where([                    
                     'Opportunities.state_id' => $data['location_id'],
                     'Opportunities.work_type_id' => $data['work_type_id'],
@@ -277,7 +279,7 @@ class OpportunitiesController extends AppController
                     'Opportunities.industry_id' => $data['industry_id'],
                     'Opportunities.min_salary >=' => $data['min_salary'], 'Opportunities.max_salary <=' => $data['max_salary']
                 ])
-                ->orWhere(['Opportunities.title LIKE' => "%" . $data['keywords'] . "%"])
+                ->orWhere(['Opportunities.title LIKE' => "%" . $data['keywords'] . "%", 'Opportunities.description LIKE' => "%" . $data['keywords'] . "%"])
             ;
         }              
         $this->viewBuilder()->layout("job_list");    
@@ -295,7 +297,7 @@ class OpportunitiesController extends AppController
         $this->IndustryGroups = TableRegistry::get('IndustryGroups');
 
         $opportunity = $this->Opportunities->find()
-            ->contain(['OpportunityTypes', 'Countries', 'OpportunitySellingPoints', 'States', 'OpportunityStatuses', 'Industries', 'SalaryTypes', 'WorkTypes'])
+            ->contain(['OpportunityTypes', 'Countries', 'Locations', 'Areas', 'Suburbs', 'OpportunitySellingPoints', 'States', 'OpportunityStatuses', 'Industries', 'SalaryTypes', 'WorkTypes'])
             ->where(['Opportunities.id' => $id])
             ->first()
         ;        

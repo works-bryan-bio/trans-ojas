@@ -74,6 +74,106 @@ $(function(){
 
   $('.global-datatable').DataTable({"responsive" : true});
 
+  //Opportunities
+  $("#country_id").change(function(){      
+      var country_id = $(this).val();
+      load_states_by_country_id( country_id );
+  });
+
+  $("#state_id").change(function(){      
+      var state_id = $(this).val();
+      load_locations_by_state_id( state_id );
+  });
+
+  $("#location_id").change(function(){      
+      var location_id = $(this).val();
+      load_areas_by_location_id( location_id );
+  });
+
+  $("#area_id").change(function(){      
+      var area_id = $(this).val();
+      load_suburb_by_area_id( area_id );
+  });
+
+  function load_states_by_country_id( country_id ){    
+    var url = base_url + "ajax/ajax_load_states_by_country_id";
+    $.ajax({               
+     url: url,
+     data: {'country_id':country_id},        
+     type: 'POST',         
+       success: function(data)
+       {
+          if(data){
+            $('#state_id').removeAttr("disabled");                
+            $("#state_id").html(data);
+            load_locations_by_state_id($("#state_id").val());
+          }else{
+            $('#state_id').val(0);
+            $("#state_id").html("<option value=''>- No records found -</option>");                
+          }              
+       }
+    });
+  }
+
+  function load_locations_by_state_id( state_id ){    
+    var url = base_url + "ajax/ajax_load_locations_by_state_id";
+    $.ajax({               
+     url: url,
+     data: {'state_id':state_id},        
+     type: 'POST',         
+       success: function(data)
+       {
+          if(data){
+            $('#location_id').removeAttr("disabled");                
+            $("#location_id").html(data);
+            load_areas_by_location_id($("#location_id").val());
+          }else{
+            $('#location_id').val(0);
+            $("#location_id").html("<option value=''>- No records found -</option>");                
+          }              
+       }
+    });
+  }
+
+  function load_areas_by_location_id( location_id ){    
+    var url = base_url + "ajax/ajax_load_areas_by_location_id";
+    $.ajax({               
+     url: url,
+     data: {'location_id':location_id},        
+     type: 'POST',         
+       success: function(data)
+       {
+          if(data){
+            $('#area_id').removeAttr("disabled");                
+            $("#area_id").html(data);
+            load_suburb_by_area_id($("#area_id").val());
+          }else{
+            $('#area_id').val(0);
+            $("#area_id").html("<option value=''>- No records found -</option>");                
+          }              
+       }
+    });
+  }
+
+  function load_suburb_by_area_id( area_id ){    
+    var url = base_url + "ajax/ajax_load_suburb_by_area_id";
+    $.ajax({               
+     url: url,
+     data: {'area_id':area_id},        
+     type: 'POST',         
+       success: function(data)
+       {
+          if(data){
+            $('#suburb_id').removeAttr("disabled");                
+            $("#suburb_id").html(data);
+          }else{
+            $('#suburb_id').val(0);
+            $("#suburb_id").html("<option value=''>- No records found -</option>");                
+          }              
+       }
+    });
+  }
+
   //Date picker       
   $('.default-datepicker').datepicker({
     format: 'yyyy-mm-dd',

@@ -35,7 +35,7 @@
                                         <select class="form-control" name="industry_group_id" id="search-classification">
                                             <option value="0">-- Select Classification --</option>
                                             <?php foreach( $industryGroups as $key => $value ){ ?> 
-                                                <option value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                                <option <?php echo( $default_industry_group_id == $key ? 'selected="selected"' : '' ); ?>  value="<?php echo $key; ?>"><?php echo $value; ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>

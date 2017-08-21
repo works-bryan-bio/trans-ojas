@@ -41,8 +41,11 @@
             <?= $this->Html->link('<i class="fa fa-bullhorn"></i><span>' . __("Testimonials") . "</span>",["controller" => "testimonials", "action" => "index"],["escape" => false]) ?>
         </li>        
         <li id="users_nav" title="Users" class="<?= $nav_selected["slides"] ?>">
-            <?= $this->Html->link('<i class="fa fa-globe"></i><span>' . __("Slides") . "</span>",["controller" => "slides", "action" => "index"],["escape" => false]) ?>
-        </li>                  
+            <?= $this->Html->link('<i class="fa fa-image"></i><span>' . __("Slides") . "</span>",["controller" => "slides", "action" => "index"],["escape" => false]) ?>
+        </li>     
+        <li id="web_nav" title="Website" class="<?= $nav_selected["web"] ?>">
+                <?= $this->Html->link('<i class="fa fa-globe"></i><span>' . __("Website") . "</span>",["controller" => "main", "action" => "index"],["target" => "_new", "escape" => false]) ?>
+            </li>                  
         <li id="groups_nav" title="Groups" class="treeview <?= $nav_selected["system_settings"] ?>">
             <a href="#">
             <i class="fa fa-gear"></i> <span>System Settings</span>
@@ -89,9 +92,7 @@
             <li id="users_nav" title="Users" class="<?= $nav_selected["groups"] ?>">
                 <?= $this->Html->link('<i class="fa fa-circle-o"></i><span>' . __("Groups") . "</span>",["controller" => "groups", "action" => "index"],["escape" => false]) ?>
             </li>  
-            <li id="users_nav" title="Users" class="<?= $nav_selected["web"] ?>">
-                <?= $this->Html->link('<i class="fa fa-circle-o"></i><span>' . __("Website") . "</span>",["controller" => "main", "action" => "index"],["escape" => false]) ?>
-            </li>     
+            
           </ul>
         </li>           
       </ul>

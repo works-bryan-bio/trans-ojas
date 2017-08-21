@@ -21,7 +21,7 @@
                         <?php
                                                             echo "
                                     <div class='form-group'>
-                                        <label for='location_id' class='col-sm-2 control-label'>" . __('Location Id') . "</label>
+                                        <label for='location_id' class='col-sm-2 control-label'>" . __('Location') . "</label>
                                         <div class='col-sm-6'>";
                                          echo $this->Form->input('location_id', ['class' => 'form-control', 'id' => 'location_id', 'label' => false, 'options' => $locations]);                 
                                     echo " </div></div>";    
@@ -38,7 +38,7 @@
                         <div class="col-sm-offset-2 col-sm-10">
                             <div class="action-fixed-bottom">
                                 <?= $this->Form->button('<i class="fa fa-save"></i> ' . __('Save'),['name' => 'save', 'value' => 'save', 'class' => 'btn btn-success', 'escape' => false]) ?>
-                                <?= $this->Form->button('<i class="fa fa-edit"></i> ' . __('Save and Continue'),['name' => 'save', 'value' => 'edit', 'class' => 'btn btn-info', 'escape' => false]) ?>
+                                <?= $this->Form->button('<i class="fa fa-edit"></i> ' . __('Save and Continue editing'),['name' => 'save', 'value' => 'edit', 'class' => 'btn btn-info', 'escape' => false]) ?>
                                 <?= $this->Html->link('<i class="fa fa-angle-left"> </i> ' . __('Back To list'), ['action' => 'index'],['class' => 'btn btn-warning', 'escape' => false]) ?>
                             </div>
                         </div>

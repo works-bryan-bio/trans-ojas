@@ -30,7 +30,11 @@ a{
                             </tr>
                             <tr>
                               <th scope="row">Location:</th>
-                              <td><?php echo $opportunity->state->name . ' / ' . $opportunity->country->name; ?></td>
+                              <td><?php echo $opportunity->state->name . ', ' . $opportunity->location->name . ', ' . $opportunity->area->name . ', ' . $opportunity->suburb->name; ?></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Country:</th>
+                              <td><?php echo $opportunity->country->name; ?></td>
                             </tr>
                             <tr>
                               <th scope="row">Industry:</th>
