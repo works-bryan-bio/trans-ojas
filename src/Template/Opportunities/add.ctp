@@ -64,7 +64,7 @@ h3{
                                     
                                                             echo "
                                     <div class='form-group'>
-                                        <label for='requirements' class='col-sm-2 control-label'>" . __('Requirements') . "</label>
+                                        <label for='requirements' class='col-sm-2 control-label'>" . __('Short Description') . "</label>
                                         <div class='col-sm-6'>";
                                         echo $this->Form->input('requirements', ['class' => 'form-control', 'id' => 'requirements', 'label' => false]);                
                                     echo " </div></div>";
@@ -161,12 +161,12 @@ h3{
                                          echo $this->Form->input('suburb_id', ['class' => 'form-control', 'id' => 'suburb_id', 'label' => false]);                 
                                     echo " </div></div>";    
 
-                                                            echo "
-                                    <div class='form-group'>
-                                        <label for='city' class='col-sm-2 control-label'>" . __('City') . "</label>
-                                        <div class='col-sm-6'>";
-                                        echo $this->Form->input('city', ['class' => 'form-control', 'id' => 'city', 'label' => false]);                
-                                    echo " </div></div>";    
+                                    //                         echo "
+                                    // <div class='form-group'>
+                                    //     <label for='city' class='col-sm-2 control-label'>" . __('City') . "</label>
+                                    //     <div class='col-sm-6'>";
+                                    //     echo $this->Form->input('city', ['class' => 'form-control', 'id' => 'city', 'label' => false]);                
+                                    // echo " </div></div>";    
                                     
                                                             echo "
                                     <div class='form-group'>

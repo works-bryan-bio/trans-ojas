@@ -151,9 +151,14 @@ class OpportunitiesController extends AppController
         $opportunityTypes = $this->Opportunities->OpportunityTypes->find('list', ['limit' => 200]);
         $countries   = $this->Opportunities->Countries->find('list', ['limit' => 200]);
         $states      = $this->Opportunities->States->find('list', ['limit' => 200]);
+
+        $location   = $this->Opportunities->Locations->find('list', ['limit' => 200]);
+        $areas   = $this->Opportunities->Areas->find('list', ['limit' => 200]);
+        $suburbs   = $this->Opportunities->Suburbs->find('list', ['limit' => 200]);
+
         $opportunityStatuses = $this->Opportunities->OpportunityStatuses->find('list', ['limit' => 200]);
         $industries = $this->Opportunities->Industries->find('list', ['limit' => 200]);
-        $this->set(compact('opportunity', 'opportunityTypes', 'countries', 'states', 'opportunityStatuses', 'industries', 'salaryTypes', 'workTypes','maxSellingPoints'));
+        $this->set(compact('opportunity', 'opportunityTypes', 'countries', 'states', 'opportunityStatuses', 'industries', 'salaryTypes', 'workTypes','maxSellingPoints', 'location' , 'areas', 'suburbs'));
         $this->set('_serialize', ['opportunity']);
     }
 

@@ -64,7 +64,7 @@ h3{
                                     
                                                             echo "
                                     <div class='form-group'>
-                                        <label for='requirements' class='col-sm-2 control-label'>" . __('Requirements') . "</label>
+                                        <label for='requirements' class='col-sm-2 control-label'>" . __('Short Description') . "</label>
                                         <div class='col-sm-6'>";
                                         echo $this->Form->input('requirements', ['class' => 'form-control', 'id' => 'requirements', 'label' => false]);                
                                     echo " </div></div>";
@@ -139,12 +139,34 @@ h3{
                                         <div class='col-sm-6'>";
                                          echo $this->Form->input('state_id', ['class' => 'form-control', 'id' => 'state_id', 'label' => false, 'options' => $states]);                 
                                     echo " </div></div>";    
-                                                            echo "
+
+                                      echo "
                                     <div class='form-group'>
-                                        <label for='city' class='col-sm-2 control-label'>" . __('City') . "</label>
+                                        <label for='location_id' class='col-sm-2 control-label'>" . __('Location') . "</label>
                                         <div class='col-sm-6'>";
-                                        echo $this->Form->input('city', ['class' => 'form-control', 'id' => 'city', 'label' => false]);                
+                                         echo $this->Form->input('location_id', ['class' => 'form-control', 'id' => 'location_id', 'label' => false ,'options' => $location ]);                 
                                     echo " </div></div>";    
+
+                                    echo "
+                                    <div class='form-group'>
+                                        <label for='area_id' class='col-sm-2 control-label'>" . __('Area') . "</label>
+                                        <div class='col-sm-6'>";
+                                         echo $this->Form->input('area_id', ['class' => 'form-control', 'id' => 'area_id', 'label' => false ,'options' => $areas]);                 
+                                    echo " </div></div>";    
+
+                                    echo "
+                                    <div class='form-group'>
+                                        <label for='suburb_id' class='col-sm-2 control-label'>" . __('Suburb') . "</label>
+                                        <div class='col-sm-6'>";
+                                         echo $this->Form->input('suburb_id', ['class' => 'form-control', 'id' => 'suburb_id', 'label' => false ,'options' => $suburbs]);                 
+                                    echo " </div></div>";    
+
+                                    // echo "
+                                    // <div class='form-group'>
+                                    //     <label for='city' class='col-sm-2 control-label'>" . __('City') . "</label>
+                                    //     <div class='col-sm-6'>";
+                                    //     echo $this->Form->input('city', ['class' => 'form-control', 'id' => 'city', 'label' => false]);                
+                                    // echo " </div></div>";    
                                     
                                                             echo "
                                     <div class='form-group'>
