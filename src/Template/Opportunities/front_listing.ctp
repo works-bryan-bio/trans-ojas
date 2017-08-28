@@ -4,7 +4,7 @@
     <div class="apply-for-job-search-inner">
         <div class="wrapper">
             <div class="job-search-title">
-                <h2>Job Title Search</h2>
+                <h2>Job Search</h2>
             </div>
 
             <!-- search form -->
@@ -19,7 +19,7 @@
                             <div class="row">
                                 <div class="col-md-6 col-xs-12">
                                     <div class="search-jobs">
-                                        <input type="text" name="job_query" placeholder="Job Search">
+                                        <input type="text" name="job_query" placeholder="Job Title Search">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-xs-12">

@@ -19,7 +19,7 @@
                             <div class="row">
                                 <div class="col-md-6 col-xs-12">
                                     <div class="search-jobs">
-                                        <input type="text" name="job_query" placeholder="Job Search">
+                                        <input type="text" name="job_query" placeholder="Job Title Search">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-xs-12">
