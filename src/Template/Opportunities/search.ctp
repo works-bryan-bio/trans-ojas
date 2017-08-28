@@ -77,10 +77,12 @@
                                           <th scope="row">Job Type:</th>
                                           <td><?php echo $opportunity->work_type->name; ?></td>
                                         </tr>
-                                        <tr>
-                                          <th scope="row">Salary:</th>
-                                          <td><?php echo $opportunity->salary_details_displayed; ?></td>
-                                        </tr>
+                                        <?php if( $opportunity->display_salary_on_ads == 1 ){ ?>
+                                            <tr>
+                                              <th scope="row">Salary:</th>
+                                              <td><?php echo $opportunity->salary_details_displayed; ?></td>
+                                            </tr>
+                                        <?php } ?>                                        
                                       </tbody>
                                     </table>
                                     <div class="search-component-read-more">

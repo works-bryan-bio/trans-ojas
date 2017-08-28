@@ -73,13 +73,7 @@
                     <div class="search-result">
                         <div class="row">
                             <div class="col-md-8 col-xs-12">
-                                <h4><?php echo $opportunity->title; ?></h4>                                
-                                <ul class="selling-points-list">
-                                <?php foreach( $opportunity->opportunity_selling_points as $sp ){ ?>
-                                  <li><?php echo $sp->key_selling_points; ?></li>
-                                <?php } ?>
-                                </ul>
-                                <h4>Job Description</h4>
+                                <h4><?php echo $opportunity->title; ?></h4>
                                 <?php echo Text::excerpt($opportunity->description, 'method', 200, '...'); ?>                                  
                             </div>                        
                             <div class="col-md-4 col-xs-12">
@@ -87,20 +81,19 @@
                                     <table class="table">
                                       <tbody>
                                         <tr>
-                                          <th scope="row">Salary Details:</th>
-                                          <td><?php echo $opportunity->salary_details_displayed; ?></td>
-                                        </tr>
-                                        <tr>
                                           <th scope="row">Location:</th>
-                                          <td>
-                                            <?php echo $opportunity->state->name . ', ' . $opportunity->location->name . ', ' . $opportunity->area->name . ', ' . $opportunity->suburb->name; ?>
-                                          </td>
+                                          <td><?php echo $opportunity->country->name; ?></td>
                                         </tr>
                                         <tr>
                                           <th scope="row">Job Type:</th>
                                           <td><?php echo $opportunity->work_type->name; ?></td>
                                         </tr>
-                                        
+                                        <?php if( $opportunity->display_salary_on_ads == 1 ){ ?>
+                                            <tr>
+                                              <th scope="row">Salary:</th>
+                                              <td><?php echo $opportunity->salary_details_displayed; ?></td>
+                                            </tr>
+                                        <?php } ?>                                        
                                       </tbody>
                                     </table>
                                     <div class="search-component-read-more">

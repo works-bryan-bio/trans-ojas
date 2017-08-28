@@ -214,10 +214,17 @@ class OpportunitiesController extends AppController
 
         if( $data['job_query'] != "" && $data['job_location'] > 0 ){
             $opportunities = $this->Opportunities->find('all')
-                ->contain(['OpportunityTypes', 'Countries', 'States', 'OpportunityStatuses', 'Industries' => ['IndustryGroups'], 'SalaryTypes', 'WorkTypes'])
+                ->contain(['OpportunityTypes', 'Countries', 'States', 'OpportunityStatuses', 'OpportunitySellingPoints', 'Industries', 'SalaryTypes', 'WorkTypes'])
                 ->where([                    
                     'Opportunities.state_id' => $data['job_location'],
                     'Opportunities.end_date >=' => date("Y-m-d"),
+                    'Opportunities.title LIKE' => "%" . $data['job_query'] . "%"
+                ])                
+            ;
+        }else{
+            $opportunities = $this->Opportunities->find('all')
+                ->contain(['OpportunityTypes', 'Countries', 'States', 'OpportunityStatuses', 'OpportunitySellingPoints', 'Industries', 'SalaryTypes', 'WorkTypes'])
+                ->where([                                                            
                     'Opportunities.title LIKE' => "%" . $data['job_query'] . "%"
                 ])                
             ;
