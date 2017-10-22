@@ -167,12 +167,19 @@ h3{
                                     //     <div class='col-sm-6'>";
                                     //     echo $this->Form->input('city', ['class' => 'form-control', 'id' => 'city', 'label' => false]);                
                                     // echo " </div></div>";    
+
+
+                                    if($opportunity->end_date){
+                                        $end_date = $opportunity->end_date->format("Y-m-d");
+                                    }else{
+                                        $end_date = "";
+                                    }
                                     
                                                             echo "
                                     <div class='form-group'>
                                         <label for='end_date' class='col-sm-2 control-label'>" . __('End Date') . "</label>
                                         <div class='col-sm-6'>";
-                                        echo $this->Form->input('end_date', ['type' => 'text', 'class' => 'form-control default-datepicker', 'value' => $opportunity->end_date->format("Y-m-d"), 'id' => 'end_date', 'label' => false]);                
+                                        echo $this->Form->input('end_date', ['type' => 'text', 'class' => 'form-control default-datepicker', 'value' => $end_date, 'id' => 'end_date', 'label' => false]);                
                                     echo " </div></div>";    
                                     
                                                             echo "
@@ -187,14 +194,46 @@ h3{
                                         <label for='admin_remark' class='col-sm-2 control-label'>" . __('Admin Remark') . "</label>
                                         <div class='col-sm-6'>";
                                         echo $this->Form->input('admin_remark', ['class' => 'form-control', 'id' => 'admin_remark', 'label' => false]);                
-                                    echo " </div></div>";                            
+                                    echo " </div></div>";     
+                                
+                                    if($OpportunitySellingPoints){
+                                        $x = 1;
+                                        foreach ($OpportunitySellingPoints as  $value) {
+                                            
+                                            if($x == 1){
+                                                $sell_point1 = $value->key_selling_points;
+                                                $x++;
+                                            }elseif($x == 2){
+                                                $sell_point2 = $value->key_selling_points;
+                                                $x++;
+                                            }elseif($x == 3){
+                                                $sell_point3 = $value->key_selling_points;
+                                                $x++;
+                                            }
+                                        }
+                                    }else{
+                                        $sell_point1 = '';
+                                        $sell_point2 = '';
+                                        $sell_point3 = '';
+                                    }
+
+                                    if(!isset($sell_point1)){$sell_point1 = '';}
+                                    if(!isset($sell_point2)){$sell_point2 = '';}
+                                    if(!isset($sell_point3)){$sell_point3 = '';}
                                                 ?>
                                     <h3>Selling Points</h3>
-                                    <?php for( $x=1;$x<=$maxSellingPoints;$x++ ){ ?>
+                                    <?php // for( $x=1;$x<=$maxSellingPoints;$x++ ){ ?>
                                         <div class="col-sm-5" style="margin:10px;">
-                                            <input class="form-control" name="keySellingPoints[]" placeholder="Key Selling Points" />
+                                            <input class="form-control" name="keySellingPoints[]" placeholder="Key Selling Points" value="<?php echo $sell_point1; ?>" />
                                         </div>
-                                    <?php } ?>
+                                        <div class="col-sm-5" style="margin:10px;">
+                                            <input class="form-control" name="keySellingPoints[]" placeholder="Key Selling Points" value="<?php echo $sell_point2; ?>" />
+                                        </div>
+                                        <div class="col-sm-5" style="margin:10px;">
+                                            <input class="form-control" name="keySellingPoints[]" placeholder="Key Selling Points" value="<?php echo $sell_point3; ?>" />
+                                        </div>
+
+                                    <?php // } ?>
                     </fieldset>
                     <div class="form-group" style="margin-top: 80px;">
                         <div class="col-sm-offset-2 col-sm-10">

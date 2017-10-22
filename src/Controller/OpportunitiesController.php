@@ -127,6 +127,12 @@ class OpportunitiesController extends AppController
      */
     public function edit($id = null)
     {
+        $this->OpportunitySellingPoints = TableRegistry::get('OpportunitySellingPoints');
+         $OpportunitySellingPoints = $this->OpportunitySellingPoints->find('all')
+            ->where([
+                'opportunity_id' => $id,
+            ])
+        ;
         $opportunity = $this->Opportunities->get($id, [
             'contain' => []
         ]);
@@ -136,6 +142,35 @@ class OpportunitiesController extends AppController
                 $this->Flash->success(__('The opportunity has been saved.'));
                 $action = $this->request->data['save'];
                 if( $action == 'save' ){
+
+                     $OpportunitySellingPoints = $this->OpportunitySellingPoints->find('all')
+                        ->where([
+                            'opportunity_id' => $id,
+                        ])
+                    ;
+                    if($OpportunitySellingPoints){
+                        foreach ($OpportunitySellingPoints as  $value) {
+                            $osp_id = $value->id;
+                            $OpportunitySellingPoints = $this->OpportunitySellingPoints->get($osp_id);
+                            $this->OpportunitySellingPoints->delete($OpportunitySellingPoints);
+                        }
+                    }
+                        $data_key_points = $this->request->data['keySellingPoints'];
+                        foreach( $data_key_points as $pt ){
+                            $selling_point = trim($pt);
+                            if( $selling_point != "" ){
+                                $data_selling_points = [
+                                    'opportunity_id' => $id,
+                                    'key_selling_points' => $selling_point
+                                ];
+                                $opportunitySellingPoint = $this->Opportunities->OpportunitySellingPoints->newEntity();
+                                $opportunitySellingPoint = $this->Opportunities->OpportunitySellingPoints->patchEntity($opportunitySellingPoint, $data_selling_points);
+                                $this->Opportunities->OpportunitySellingPoints->save($opportunitySellingPoint);
+                            }
+                        }
+                    
+
+                   
                     return $this->redirect(['action' => 'index']);
                 }else{
                     return $this->redirect(['action' => 'edit', $id]);
@@ -145,7 +180,8 @@ class OpportunitiesController extends AppController
             }
         }    
 
-        $maxSellingPoints = 8;
+   $maxSellingPoints = 3;
+
         $salaryTypes = $this->Opportunities->SalaryTypes->find('list', ['limit' => 200]);
         $workTypes   = $this->Opportunities->WorkTypes->find('list', ['limit' => 200]);
         $opportunityTypes = $this->Opportunities->OpportunityTypes->find('list', ['limit' => 200]);
@@ -158,7 +194,7 @@ class OpportunitiesController extends AppController
 
         $opportunityStatuses = $this->Opportunities->OpportunityStatuses->find('list', ['limit' => 200]);
         $industries = $this->Opportunities->Industries->find('list', ['limit' => 200]);
-        $this->set(compact('opportunity', 'opportunityTypes', 'countries', 'states', 'opportunityStatuses', 'industries', 'salaryTypes', 'workTypes','maxSellingPoints', 'location' , 'areas', 'suburbs'));
+        $this->set(compact('opportunity', 'opportunityTypes', 'countries', 'states', 'opportunityStatuses', 'industries', 'salaryTypes', 'workTypes','maxSellingPoints', 'location' , 'areas', 'suburbs', 'OpportunitySellingPoints'));
         $this->set('_serialize', ['opportunity']);
     }
 

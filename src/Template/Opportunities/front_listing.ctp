@@ -63,7 +63,7 @@
                         <div class="row">
                             <div class="col-md-8 col-xs-12">
                                 <h4><?php echo $opportunity->title; ?></h4>
-                                <?php echo Text::excerpt($opportunity->description, 'method', 200, '...'); ?>                                  
+                                <?php echo $opportunity->requirements; ?>                                  
                             </div>                        
                             <div class="col-md-4 col-xs-12">
                                 <div class="job-search-components">
